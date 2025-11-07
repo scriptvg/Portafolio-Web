@@ -1,0 +1,75 @@
+/* Estilos adicionales para asegurar responsividad en producción */
+
+/* Prevenir overflow horizontal en todos los contenedores */
+* {
+  box-sizing: border-box;
+}
+
+/* Asegurar que los contenedores no excedan el viewport */
+.container {
+  width: 100%;
+  max-width: 100%;
+  padding-left: 1rem;
+  padding-right: 1rem;
+}
+
+/* Media queries para contenedores responsivos */
+@media (min-width: 640px) {
+  .container {
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
+  }
+}
+
+@media (min-width: 768px) {
+  .container {
+    padding-left: 2rem;
+    padding-right: 2rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  .container {
+    padding-left: 2.5rem;
+    padding-right: 2.5rem;
+  }
+}
+
+/* Asegurar que las secciones sean responsivas */
+section {
+  width: 100%;
+  max-width: 100vw;
+  overflow-x: hidden;
+}
+
+/* Prevenir que los elementos fixed/absolute causen overflow */
+.fixed,
+.absolute {
+  max-width: 100vw;
+}
+
+/* Asegurar que los grids sean responsivos */
+.grid {
+  width: 100%;
+}
+
+/* Mejorar la responsividad de las animaciones en móviles */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+/* Asegurar que el navbar sea responsivo */
+nav {
+  max-width: 100vw;
+}
+
+/* Prevenir problemas con framer-motion en producción */
+[data-framer-component-type] {
+  max-width: 100%;
+}
