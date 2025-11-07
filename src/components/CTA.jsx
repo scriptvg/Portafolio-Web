@@ -104,7 +104,7 @@ const CTA = () => {
               asChild
             >
               <motion.a
-                href="https://www.linkedin.com/in/allan-velez"
+                href="https://www.linkedin.com/in/allan-josé-vélez-gonzález"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="flex items-center gap-2"

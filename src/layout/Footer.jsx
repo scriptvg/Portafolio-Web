@@ -1,48 +1,97 @@
-import { Mail, Phone, MapPin } from 'lucide-react'
+import { Mail, Linkedin, MapPin } from 'lucide-react'
+import { Button } from '@/components/ui/button'
 
 function Footer() {
   return (
-    <footer className="py-6 sm:py-8 px-4 border-t border-border bg-background">
-      <div className="container mx-auto max-w-6xl">
-        <div className="flex flex-col md:flex-row justify-between items-center gap-4 mb-4">
-          <p className="text-xs sm:text-sm md:text-base text-muted-foreground text-center md:text-left">
-            © {new Date().getFullYear()} Allan José Vélez González · Desarrollador FullStack
-          </p>
-          
-          <div className="flex flex-wrap gap-3 sm:gap-4 justify-center items-center text-xs sm:text-sm text-muted-foreground">
-            <a 
-              href="mailto:velezalan34@gmail.com"
-              className="flex items-center gap-1 hover:text-foreground transition"
-              aria-label="Email"
-            >
-              <Mail className="h-3 w-3 sm:h-4 sm:w-4" />
-              <span className="hidden sm:inline">velezalan34@gmail.com</span>
-            </a>
-            <a 
-              href="tel:+50684813021"
-              className="flex items-center gap-1 hover:text-foreground transition"
-              aria-label="Teléfono"
-            >
-              <Phone className="h-3 w-3 sm:h-4 sm:w-4" />
-              <span>+506 8481 3021</span>
-            </a>
-            <span className="flex items-center gap-1">
-              <MapPin className="h-3 w-3 sm:h-4 sm:w-4" />
-              <span className="hidden sm:inline">Esparza, Costa Rica</span>
-              <span className="sm:hidden">CR</span>
-            </span>
+    <footer className="py-6 sm:py-8 px-4 sm:px-6 border-t border-border bg-background/50 backdrop-blur-sm">
+      <div className="w-full max-w-6xl mx-auto">
+        {/* Main Content */}
+        <div className="flex flex-col items-center gap-4 sm:gap-5">
+          {/* Logo/Name */}
+          <div className="text-center">
+            <h3 className="text-base sm:text-lg font-bold">Allan Vélez</h3>
+            <p className="text-[10px] sm:text-xs text-muted-foreground mt-0.5">
+              Desarrollador Full Stack
+            </p>
           </div>
-        </div>
-        
-        <div className="flex justify-center">
-          <a 
-            href="https://www.linkedin.com/in/allan-velez" 
-            target="_blank" 
-            rel="noopener noreferrer"
-            className="text-xs text-muted-foreground hover:text-primary transition"
-          >
-            Conecta conmigo en LinkedIn
-          </a>
+
+          {/* Quick Links */}
+          <div className="flex flex-wrap items-center justify-center gap-3 sm:gap-4 text-[11px] sm:text-xs">
+            <a 
+              href="#inicio" 
+              className="text-muted-foreground hover:text-primary transition-colors"
+            >
+              Inicio
+            </a>
+            <span className="text-muted-foreground/30">•</span>
+            <a 
+              href="#sobre-mi" 
+              className="text-muted-foreground hover:text-primary transition-colors"
+            >
+              Sobre mí
+            </a>
+            <span className="text-muted-foreground/30">•</span>
+            <a 
+              href="#proyectos" 
+              className="text-muted-foreground hover:text-primary transition-colors"
+            >
+              Proyectos
+            </a>
+            <span className="text-muted-foreground/30">•</span>
+            <a 
+              href="#contacto" 
+              className="text-muted-foreground hover:text-primary transition-colors"
+            >
+              Contacto
+            </a>
+          </div>
+
+          {/* Contact Buttons */}
+          <div className="flex flex-wrap items-center justify-center gap-2">
+            <Button
+              size="sm"
+              variant="outline"
+              className="rounded-full h-8 px-3 text-[11px] sm:text-xs"
+              asChild
+            >
+              <a 
+                href="mailto:velezalan34@gmail.com"
+                className="flex items-center gap-1.5"
+              >
+                <Mail className="h-3 w-3" />
+                Email
+              </a>
+            </Button>
+            <Button
+              size="sm"
+              variant="outline"
+              className="rounded-full h-8 px-3 text-[11px] sm:text-xs"
+              asChild
+            >
+              <a 
+                href="https://www.linkedin.com/in/allan-jos%C3%A9-v%C3%A9lez-gonz%C3%A1lez/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-center gap-1.5"
+              >
+                <Linkedin className="h-3 w-3" />
+                LinkedIn
+              </a>
+            </Button>
+          </div>
+
+          {/* Location */}
+          <div className="flex items-center gap-1 text-[10px] sm:text-xs text-muted-foreground">
+            <MapPin className="h-3 w-3" />
+            <span>Esparza, Costa Rica</span>
+          </div>
+
+          {/* Copyright */}
+          <div className="pt-3 sm:pt-4 border-t border-border/50 w-full">
+            <p className="text-[10px] sm:text-xs text-center text-muted-foreground">
+              © {new Date().getFullYear()} Allan José Vélez González. Todos los derechos reservados.
+            </p>
+          </div>
         </div>
       </div>
     </footer>

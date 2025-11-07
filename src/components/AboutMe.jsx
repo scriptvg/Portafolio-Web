@@ -63,7 +63,7 @@ const AboutMe = () => {
                 asChild
               >
                 <motion.a
-                  href="https://www.linkedin.com/in/allan-velez"
+                  href="https://www.linkedin.com/in/allan-jos%C3%A9-v%C3%A9lez-gonz%C3%A1lez/"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="flex items-center gap-2"
