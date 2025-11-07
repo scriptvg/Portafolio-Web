@@ -1,0 +1,140 @@
+Inicio
+Proyectos
+Acerca de mí
+Contacto
+
+Allan José Vélez González
+Desarrollador
+FullStack
+Esparza, Puntarenas, Costa Rica
+·
+LinkedIn
+·
++506 84813021
+·
+velezalan34@gmail.com
+Desarrollador Full Stack especializado en React y Django, egresado de un bootcamp intensivo de 6 meses orientado al desarrollo web profesional. Con una base sólida en frontend moderno y un backend robusto en Python Django, incluyendo el uso de MySQL como sistema de base de datos principal.
+
+Experiencia en proyectos reales, aplicaciones administrativas y sistemas de punto de venta. Apasionado por la creación de soluciones eficientes, escalables y centradas en el usuario, con un enfoque en código limpio, arquitectura clara y desarrollo profesional continuo.
+
+Stack de Tecnologías
+React
+React
+Vite
+Vite
+TailwindCSS
+TailwindCSS
+HTML5
+HTML5
+CSS3
+JavaScript
+JavaScript
+TypeScript
+TypeScript
+Python
+Python
+Django
+Django
+Node.js
+MySQL
+MySQL
+SQL
+Git
+Git
+Linux
+Linux
+OpenAI
+OpenAI
+React
+React
+Vite
+Vite
+TailwindCSS
+TailwindCSS
+HTML5
+HTML5
+CSS3
+JavaScript
+JavaScript
+TypeScript
+TypeScript
+Python
+Python
+Django
+Django
+Node.js
+MySQL
+MySQL
+SQL
+Git
+Git
+Linux
+Linux
+OpenAI
+OpenAI
+Skills Adicionales
+Compromiso con el aprendizaje y la mejora continua
+Capacidad para resolver problemas complejos
+Análisis estructurado y eficiente de errores
+Trabajo individual y colaborativo en equipo
+Capacidad investigadora e interés genuino por profundizar en los temas
+Habilidad para analizar conceptos técnicos
+Capacidad para explicar ideas de forma clara
+Dominio de contenidos técnicos
+Facilidad para facilitar el aprendizaje a otros
+Curiosidad intelectual
+Potencial académico y profesional notable
+Actitud proactiva y comprometida
+Títulos y Educación
+FrontEnd
+Forward Tech & Freedom
+Bootcamp Full FrontEnd Developer
+Forward Tech & Freedom
+Enero 2025 – Marzo 2025
+Curso intensivo de 3 meses enfocado en desarrollo Frontend profesional con React, HTML, CSS y JavaScript. Incluyó proyectos prácticos y trabajo en equipo.
+Diploma de Bootcamp Full FrontEnd Developer
+Descargar PDF
+BackEnd
+Forward Tech & Freedom
+Bootcamp Full BackEnd Developer
+Forward Tech & Freedom
+Abril 2025 – Julio 2025
+Curso intensivo de 3 meses enfocado en desarrollo Backend profesional con Django, MySQL y metodologías ágiles. Incluyó proyectos prácticos y trabajo en equipo.
+Diploma de Bootcamp Full BackEnd Developer
+Descargar PDF
+Stack
+Forward Tech & Freedom
+Bootcamp Full Stack Developer
+Forward Tech & Freedom
+Enero 2025 – Junio 2025
+Certificación obtenida tras completar los bootcamps de Frontend y Backend, desarrollando aplicaciones completas y participando en proyectos integrales.
+Diploma de Bootcamp Full Stack Developer
+Descargar PDF
+Proyectos Destacados
+Creador de Exámenes con IA para Moodle (Academia UPC)
+Creador de Exámenes con IA para Moodle (Academia UPC)
+Python
+OpenAI
+Replit
+Moodle
+Aplicación web que permite la creación automatizada de exámenes académicos compatibles con Moodle, utilizando inteligencia artificial (IA). Los usuarios pueden generar preguntas y respuestas automáticamente mediante prompts personalizados, o también redactarlas manualmente para ser transformadas al formato R compatible con Moodle.
+
+Ver detalle
+Academia virtual UPC - OfitechLat
+Academia virtual UPC - OfitechLat
+Moodle
+PHP
+MySQL
+Proyecto desarrollado para Academia UPC en colaboración con OfitechLat, integrando herramientas de código abierto y personalización avanzada de una plataforma de educación virtual basada en Moodle para lograr una experiencia educativa profesional.
+
+Ver detalle
+PokeProyecto
+PokeProyecto
+React
+Vite
+TailwindCSS
+PokeAPI
+Esta Pokédex es una aplicación web moderna desarrollada con React y Vite que permite explorar, buscar y visualizar información detallada de Pokémon utilizando la PokeAPI. El objetivo es servir como ejemplo educativo de buenas prácticas en React, consumo de APIs, manejo de rutas, hooks personalizados y estilizado con TailwindCSS.
+
+Ver detalle
+© 2025 Allan José Vélez González · Desarrollador FullStack
