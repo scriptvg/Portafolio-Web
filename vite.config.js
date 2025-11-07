@@ -17,13 +17,7 @@ export default defineConfig({
   build: {
     // Optimizaciones para producción
     cssCodeSplit: true,
-    minify: 'terser',
-    terserOptions: {
-      compress: {
-        drop_console: true,
-        drop_debugger: true,
-      },
-    },
+    minify: 'esbuild', // Usar esbuild (más rápido y sin dependencias extra)
     rollupOptions: {
       output: {
         manualChunks: {
@@ -33,9 +27,8 @@ export default defineConfig({
       },
     },
   },
-  css: {
-    postcss: {
-      plugins: [],
-    },
+  esbuild: {
+    // Remover console.log y debugger en producción
+    drop: ['console', 'debugger'],
   },
 });

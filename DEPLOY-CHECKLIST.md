@@ -162,6 +162,9 @@ Probar en estos breakpoints:
 ### Problema: CSS no se aplica
 **Solución**: Limpiar caché y rebuild con `pnpm build:clean`
 
+### Problema: Build falla con error de terser
+**Solución**: Ya solucionado - usando esbuild en lugar de terser
+
 ### Problema: Animaciones lentas
 **Solución**: Ya implementado `prefers-reduced-motion` en `App.css`
 
