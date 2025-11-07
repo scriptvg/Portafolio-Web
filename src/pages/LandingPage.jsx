@@ -32,8 +32,8 @@ function LandingPage() {
   ]
 
   return (
-    <ScrollArea className="h-full">
-      <div className="scroll-smooth">
+    <ScrollArea className="h-full w-full">
+      <div className="scroll-smooth w-full overflow-x-hidden">
         {/* Hero Section */}
         <section id="inicio">
           <Hero />

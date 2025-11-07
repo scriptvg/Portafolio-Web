@@ -164,6 +164,9 @@
     /* Prevenir zoom en inputs en iOS */
     -webkit-text-size-adjust: 100%;
     text-size-adjust: 100%;
+    /* Asegurar 100% del viewport */
+    width: 100%;
+    max-width: 100vw;
   }
 
   body {
@@ -172,18 +175,31 @@
     min-height: 100vh;
     min-height: 100dvh;
     overflow-x: hidden;
+    width: 100%;
+    max-width: 100vw;
+    position: relative;
   }
 
   /* Asegurar que las imágenes sean responsivas */
   img {
     max-width: 100%;
     height: auto;
+    display: block;
   }
 
   /* Prevenir overflow horizontal */
   #root {
     overflow-x: hidden;
     width: 100%;
+    max-width: 100vw;
+  }
+
+  /* Asegurar que todos los contenedores respeten el viewport */
+  section,
+  div,
+  main,
+  article {
+    max-width: 100vw;
   }
 }
 

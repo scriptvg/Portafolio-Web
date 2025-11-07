@@ -4,7 +4,7 @@ import { ArrowRight, Mail, Linkedin } from 'lucide-react'
 
 const CTA = () => {
   return (
-    <section className="py-16 sm:py-20 md:px-4 relative overflow-hidden">
+    <section className="py-8 sm:py-12 md:py-16 px-4 sm:px-6 relative overflow-hidden">
       {/* Background decoration */}
       <div className="absolute inset-0 bg-gradient-to-br from-primary/10 via-primary/5 to-transparent" />
       <motion.div
@@ -32,7 +32,7 @@ const CTA = () => {
         }}
       />
 
-      <div className="container mx-auto max-w-4xl relative z-10">
+      <div className="w-full max-w-4xl mx-auto relative z-10">
         <motion.div
           className="text-center"
           initial={{ opacity: 0, y: 30 }}
@@ -53,7 +53,7 @@ const CTA = () => {
           </motion.div>
 
           <motion.h2
-            className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold mb-4 sm:mb-6"
+            className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold mb-3 sm:mb-4"
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
@@ -64,7 +64,7 @@ const CTA = () => {
           </motion.h2>
 
           <motion.p
-            className="text-base sm:text-lg md:text-xl text-muted-foreground mb-8 sm:mb-10 max-w-2xl mx-auto"
+            className="text-xs sm:text-sm md:text-base text-muted-foreground mb-6 sm:mb-8 max-w-2xl mx-auto px-2"
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
@@ -82,8 +82,8 @@ const CTA = () => {
             transition={{ duration: 0.5, delay: 0.5 }}
           >
             <Button
-              size="lg"
-              className="rounded-full text-base sm:text-lg px-8 sm:px-10 py-6 sm:py-7 w-full sm:w-auto group"
+              size="sm"
+              className="rounded-full text-xs sm:text-sm md:text-base px-4 sm:px-6 md:px-8 h-9 sm:h-10 md:h-11 w-full sm:w-auto group"
               asChild
             >
               <motion.a
@@ -98,9 +98,9 @@ const CTA = () => {
             </Button>
 
             <Button
-              size="lg"
+              size="sm"
               variant="outline"
-              className="rounded-full text-base sm:text-lg px-8 sm:px-10 py-6 sm:py-7 w-full sm:w-auto"
+              className="rounded-full text-xs sm:text-sm md:text-base px-4 sm:px-6 md:px-8 h-9 sm:h-10 md:h-11 w-full sm:w-auto"
               asChild
             >
               <motion.a

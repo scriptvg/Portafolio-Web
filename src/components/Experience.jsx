@@ -32,8 +32,8 @@ const experiences = [
 
 const Experience = () => {
   return (
-    <section id="experiencia" className="py-12 sm:py-16 md:py-20 px-4 bg-muted/30">
-      <div className="container mx-auto max-w-4xl">
+    <section id="experiencia" className="py-6 sm:py-10 md:py-14 px-4 sm:px-6 bg-muted/30">
+      <div className="w-full max-w-4xl mx-auto">
         {/* Header */}
         <motion.div
           className="text-center mb-10 sm:mb-12 md:mb-16"
@@ -42,13 +42,13 @@ const Experience = () => {
           viewport={{ once: true }}
           transition={{ duration: 0.5 }}
         >
-          <p className="text-xs sm:text-sm font-medium text-muted-foreground mb-3 sm:mb-4 tracking-wider uppercase">
+          <p className="text-[10px] sm:text-xs font-medium text-muted-foreground mb-2 sm:mb-3 tracking-wider uppercase">
             Educación
           </p>
-          <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-3 sm:mb-4">
+          <h2 className="text-xl sm:text-2xl md:text-3xl font-bold mb-2 sm:mb-3">
             Títulos y Formación
           </h2>
-          <p className="text-sm sm:text-base md:text-lg text-muted-foreground">
+          <p className="text-xs sm:text-sm md:text-base text-muted-foreground">
             Mi trayectoria de formación profesional en desarrollo web
           </p>
         </motion.div>

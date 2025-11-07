@@ -7,7 +7,7 @@ import { ArrowUpRight, MapPin } from "lucide-react";
 export default function Hero() {
   return (
     <div
-      className="relative min-h-[600px] sm:min-h-[700px] md:min-h-[800px] flex items-center justify-center px-4 sm:px-6 overflow-hidden py-12 sm:py-16">
+      className="relative min-h-[400px] sm:min-h-[500px] md:min-h-[600px] flex items-center justify-center overflow-hidden py-12 sm:py-16 md:py-20 w-full px-4 sm:px-6">
       <AnimatedGridPattern
         numSquares={30}
         maxOpacity={0.1}
@@ -17,47 +17,36 @@ export default function Hero() {
           "inset-x-0 h-full skew-y-12"
         )} />
       <div className="relative z-10 text-center max-w-3xl w-full">
-        <Badge variant="secondary" className="rounded-full py-1 px-3 border-border text-xs sm:text-sm">
-          <span className="flex items-center gap-1 sm:gap-2">
-            <MapPin className="h-3 w-3 sm:h-4 sm:w-4" />
-            <span className="hidden xs:inline">Esparza, Puntarenas,</span> Costa Rica
+        <Badge variant="secondary" className="rounded-full py-0.5 px-2 border-border text-[10px] sm:text-xs">
+          <span className="flex items-center gap-1">
+            <MapPin className="h-2.5 w-2.5 sm:h-3 sm:w-3" />
+            Costa Rica
           </span>
         </Badge>
         <h1
-          className="mt-4 sm:mt-6 text-3xl xs:text-4xl sm:text-5xl md:text-6xl lg:text-7xl leading-tight sm:leading-tight md:leading-[1.2] font-semibold tracking-tighter px-2">
+          className="mt-2 sm:mt-3 md:mt-4 text-lg sm:text-2xl md:text-3xl lg:text-4xl xl:text-5xl leading-tight font-bold tracking-tight px-1">
           Allan José Vélez González
         </h1>
-        <p className="mt-3 sm:mt-4 text-xl xs:text-2xl md:text-3xl font-medium text-primary">
+        <p className="mt-1.5 sm:mt-2 md:mt-3 text-sm sm:text-base md:text-lg lg:text-xl font-medium text-primary">
           Desarrollador Full Stack
         </p>
-        <p className="mt-4 sm:mt-6 text-sm sm:text-base md:text-lg text-foreground/80 max-w-2xl mx-auto px-4">
-          Especializado en React y Django, egresado de un bootcamp intensivo de 6 meses orientado al desarrollo web profesional. 
-          Apasionado por la creación de soluciones eficientes, escalables y centradas en el usuario.
+        <p className="mt-2 sm:mt-3 md:mt-4 text-[11px] sm:text-xs md:text-sm lg:text-base text-foreground/80 max-w-2xl mx-auto leading-relaxed px-2">
+          Especializado en React y Django. Apasionado por crear soluciones eficientes y escalables.
         </p>
-        <div className="mt-8 sm:mt-12 flex items-center justify-center gap-2 sm:gap-4 flex-wrap px-4">
-          <Button size="default" className="rounded-full text-sm sm:text-base" asChild>
-            <a href="https://www.linkedin.com/in/allan-velez" target="_blank" rel="noopener noreferrer" className="flex items-center gap-1 sm:gap-2">
-              <span className="hidden xs:inline">LinkedIn</span>
-              <span className="xs:hidden">In</span>
-              <ArrowUpRight className="h-4 w-4 sm:h-5 sm:w-5" />
+        <div className="mt-4 sm:mt-6 md:mt-8 flex items-center justify-center gap-2 flex-wrap px-2">
+          <Button size="sm" className="rounded-full text-[11px] sm:text-xs md:text-sm px-3 sm:px-4 md:px-5 h-8 sm:h-9 md:h-10" asChild>
+            <a href="https://www.linkedin.com/in/allan-velez" target="_blank" rel="noopener noreferrer" className="flex items-center gap-1">
+              LinkedIn
+              <ArrowUpRight className="h-2.5 w-2.5 sm:h-3 sm:w-3 md:h-4 md:w-4" />
             </a>
           </Button>
           <Button
             variant="outline"
-            size="default"
-            className="rounded-full text-sm sm:text-base shadow-none"
+            size="sm"
+            className="rounded-full text-[11px] sm:text-xs md:text-sm shadow-none px-3 sm:px-4 md:px-5 h-8 sm:h-9 md:h-10"
             asChild>
             <a href="mailto:velezalan34@gmail.com">
               Contactar
-            </a>
-          </Button>
-          <Button
-            variant="outline"
-            size="default"
-            className="rounded-full text-sm sm:text-base shadow-none hidden xs:flex"
-            asChild>
-            <a href="tel:+50684813021">
-              +506 8481 3021
             </a>
           </Button>
         </div>

@@ -36,8 +36,8 @@ const projects = [
 
 const FeaturedWork = () => {
   return (
-    <section id="proyectos" className="py-12 sm:py-16 md:py-20 px-4">
-      <div className="container mx-auto max-w-6xl">
+    <section id="proyectos" className="py-6 sm:py-10 md:py-14 px-4 sm:px-6">
+      <div className="w-full max-w-6xl mx-auto">
         {/* Header */}
         <motion.div
           className="text-center mb-10 sm:mb-12 md:mb-16"
@@ -46,13 +46,13 @@ const FeaturedWork = () => {
           viewport={{ once: true }}
           transition={{ duration: 0.5 }}
         >
-          <p className="text-xs sm:text-sm font-medium text-muted-foreground mb-3 sm:mb-4 tracking-wider uppercase">
+          <p className="text-[10px] sm:text-xs font-medium text-muted-foreground mb-2 sm:mb-3 tracking-wider uppercase">
             Proyectos
           </p>
-          <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-3 sm:mb-4">
+          <h2 className="text-xl sm:text-2xl md:text-3xl font-bold mb-2 sm:mb-3">
             Proyectos Destacados
           </h2>
-          <p className="text-sm sm:text-base md:text-lg text-muted-foreground">
+          <p className="text-xs sm:text-sm md:text-base text-muted-foreground">
             Algunos de mis mejores proyectos y logros técnicos
           </p>
         </motion.div>

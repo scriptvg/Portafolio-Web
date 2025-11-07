@@ -5,8 +5,8 @@ import avatarImg from '@/assets/my-notion-face-portrait-removebg-preview (2).png
 
 const AboutMe = () => {
   return (
-    <section id="sobre-mi" className="py-12 sm:py-16 md:py-20 px-4">
-      <div className="container mx-auto max-w-6xl">
+    <section id="sobre-mi" className="py-6 sm:py-10 md:py-14 px-4 sm:px-6">
+      <div className="w-full max-w-6xl mx-auto">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 md:gap-12 items-center">
           {/* Left Content */}
           <motion.div
@@ -16,7 +16,7 @@ const AboutMe = () => {
             transition={{ duration: 0.6 }}
           >
             <motion.p
-              className="text-xs sm:text-sm font-medium text-muted-foreground mb-3 sm:mb-4 tracking-wider uppercase"
+              className="text-[10px] sm:text-xs font-medium text-muted-foreground mb-2 sm:mb-3 tracking-wider uppercase"
               initial={{ opacity: 0, y: -10 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
@@ -26,7 +26,7 @@ const AboutMe = () => {
             </motion.p>
 
             <motion.h2
-              className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold mb-4 sm:mb-6 leading-tight"
+              className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold mb-3 sm:mb-4 md:mb-5 leading-tight"
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
@@ -37,7 +37,7 @@ const AboutMe = () => {
             </motion.h2>
 
             <motion.p
-              className="text-sm sm:text-base md:text-lg text-muted-foreground leading-relaxed mb-6 sm:mb-8"
+              className="text-xs sm:text-sm md:text-base text-muted-foreground leading-relaxed mb-4 sm:mb-6"
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
@@ -51,15 +51,15 @@ const AboutMe = () => {
             </motion.p>
 
             <motion.div
-              className="flex flex-wrap gap-3 sm:gap-4"
+              className="flex flex-wrap gap-2 sm:gap-3"
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: 0.4 }}
             >
               <Button
-                size="default"
-                className="rounded-full text-sm sm:text-base"
+                size="sm"
+                className="rounded-full text-xs sm:text-sm h-8 sm:h-9"
                 asChild
               >
                 <motion.a
@@ -78,9 +78,9 @@ const AboutMe = () => {
               </Button>
 
               <Button
-                size="default"
+                size="sm"
                 variant="outline"
-                className="rounded-full text-sm sm:text-base"
+                className="rounded-full text-xs sm:text-sm h-8 sm:h-9"
                 asChild
               >
                 <motion.a
