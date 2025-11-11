@@ -3,6 +3,7 @@ import { ExternalLink, Github } from 'lucide-react'
 import { Button } from '@/components/ui/button'
 import { Badge } from '@/components/ui/badge'
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from '@/components/ui/card'
+import pokeproyectoImage from '@/assets/pokeapp.png'
 
 const projects = [
   {
@@ -13,6 +14,7 @@ const projects = [
     demoUrl: '#',
     codeUrl: '#',
     featured: true,
+    image: null,
   },
   {
     id: 2,
@@ -22,16 +24,38 @@ const projects = [
     demoUrl: '#',
     codeUrl: '#',
     featured: true,
+    image: null,
   },
   {
     id: 3,
     title: 'PokeProyecto',
-    description: 'Esta Pokédex es una aplicación web moderna desarrollada con React y Vite que permite explorar, buscar y visualizar información detallada de Pokémon utilizando la PokeAPI. El objetivo es servir como ejemplo educativo de buenas prácticas en React, consumo de APIs, manejo de rutas, hooks personalizados y estilizado con TailwindCSS.',
-    technologies: ['React', 'Vite', 'TailwindCSS', 'PokeAPI'],
+    description: 'Una Pokédex moderna desarrollada con React y Vite que permite explorar, buscar y visualizar información detallada de Pokémon. Consume la PokeAPI de forma eficiente con búsqueda en tiempo real, manejo avanzado de rutas, hooks personalizados y un diseño responsivo con TailwindCSS. Demuestra buenas prácticas en React: gestión de estado, optimización de rendimiento y arquitectura limpia.',
+    technologies: ['React', 'Vite', 'TailwindCSS', 'PokeAPI', 'React Router'],
+    demoUrl: 'https://pokeproyectoapi.netlify.app/',
+    codeUrl: '#',
+    featured: true,
+    image: pokeproyectoImage,
+  },
+  {
+    id: 4,
+    title: 'Sinpe Davivienda',
+    description: 'Aplicación desarrollada en el primer hackathon de Davivienda, con el objetivo de reinventar la interfaz de su aplicación móvil. Implementa una experiencia de usuario moderna y optimizada para transacciones financieras con diseño intuitivo y acceso rápido a funcionalidades clave.',
+    technologies: ['UX/UI', 'Mobile Design', 'Fintech'],
     demoUrl: '#',
     codeUrl: '#',
     featured: false,
+    image: null,
   },
+  {
+    id: 5,
+    title: 'Parque Marino del Pacífico Sur',
+    description: 'Plataforma web integral desarrollada para el Parque Marino del Pacífico Sur como parte del curso (FWD Costa Rica). Sistema modular que centraliza divulgación científica, educación ambiental y gestión institucional. Incluye fichas interactivas de especies marinas, sistema de reservas, gestión de donaciones, portal de voluntariado, sección de transparencia y módulo educativo con talleres. Construida con React y Tailwind CSS para garantizar accesibilidad y compatibilidad móvil, promoviendo participación ciudadana en conservación marina.',
+    technologies: ['React', 'Shadcn/UI', 'TailwindCSS', 'Python', 'Django', 'Paypal', 'JWT'],
+    demoUrl: '#',
+    codeUrl: 'https://github.com/Fer-2202/Proyecto_Final.git',
+    featured: true,
+    image: null,
+  }
 ]
 
 const FeaturedWork = () => {
@@ -69,36 +93,46 @@ const FeaturedWork = () => {
               className={project.featured ? 'lg:row-span-1' : ''}
             >
               <Card 
-                className={`h-full flex flex-col overflow-hidden hover:shadow-xl transition-all group ${
+                className={`p-0 h-full flex flex-col overflow-hidden hover:shadow-xl transition-all group ${
                   project.featured ? 'border-primary/50' : ''
                 }`}
               >
-                {/* Image Placeholder */}
+                {/* Image Placeholder or Project Image */}
                 <motion.div
                   className="relative w-full h-48 sm:h-56 md:h-64 bg-muted/50 flex items-center justify-center overflow-hidden"
                   whileHover={{ scale: 1.05 }}
                   transition={{ duration: 0.3 }}
                 >
-                  <div className="absolute inset-0 bg-linear-to-br from-primary/20 to-primary/5" />
-                  <motion.div
-                    className="relative z-10 w-12 h-12 sm:w-14 sm:h-14 md:w-16 md:h-16 rounded-lg bg-background/80 backdrop-blur-sm flex items-center justify-center border border-border"
-                    whileHover={{ rotate: 360 }}
-                    transition={{ duration: 0.6 }}
-                  >
-                    <svg
-                      className="w-6 h-6 sm:w-7 sm:h-7 md:w-8 md:h-8 text-muted-foreground"
-                      fill="none"
-                      stroke="currentColor"
-                      viewBox="0 0 24 24"
-                    >
-                      <path
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                        strokeWidth={2}
-                        d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z"
-                      />
-                    </svg>
-                  </motion.div>
+                  {project.image ? (
+                    <img
+                      src={project.image}
+                      alt={project.title}
+                      className="w-full h-full object-cover"
+                    />
+                  ) : (
+                    <>
+                      <div className="absolute inset-0 bg-linear-to-br from-primary/20 to-primary/5" />
+                      <motion.div
+                        className="relative z-10 w-12 h-12 sm:w-14 sm:h-14 md:w-16 md:h-16 rounded-lg bg-background/80 backdrop-blur-sm flex items-center justify-center border border-border"
+                        whileHover={{ rotate: 360 }}
+                        transition={{ duration: 0.6 }}
+                      >
+                        <svg
+                          className="w-6 h-6 sm:w-7 sm:h-7 md:w-8 md:h-8 text-muted-foreground"
+                          fill="none"
+                          stroke="currentColor"
+                          viewBox="0 0 24 24"
+                        >
+                          <path
+                            strokeLinecap="round"
+                            strokeLinejoin="round"
+                            strokeWidth={2}
+                            d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z"
+                          />
+                        </svg>
+                      </motion.div>
+                    </>
+                  )}
                 </motion.div>
 
                 <CardHeader className="p-4 sm:p-5 md:p-6">

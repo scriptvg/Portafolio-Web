@@ -144,7 +144,6 @@ const AboutMe = () => {
                     stiffness: 200, 
                     delay: 0.6 
                   }}
-                  whileHover={{ rotate: 360 }}
                 >
                   <div className="text-center">
                     <p className="text-lg sm:text-xl md:text-2xl font-bold text-primary">6</p>
@@ -163,7 +162,6 @@ const AboutMe = () => {
                     stiffness: 200, 
                     delay: 0.7 
                   }}
-                  whileHover={{ rotate: -360 }}
                 >
                   <div className="text-center">
                     <p className="text-lg sm:text-xl md:text-2xl font-bold text-primary">3+</p>
