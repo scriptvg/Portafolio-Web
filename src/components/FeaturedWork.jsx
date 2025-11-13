@@ -4,6 +4,7 @@ import { Button } from '@/components/ui/button'
 import { Badge } from '@/components/ui/badge'
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from '@/components/ui/card'
 import pokeproyectoImage from '@/assets/pokeapp.png'
+import vansclone from '@/assets/image.png'
 
 const projects = [
   {
@@ -55,6 +56,16 @@ const projects = [
     codeUrl: 'https://github.com/Fer-2202/Proyecto_Final.git',
     featured: true,
     image: null,
+  },
+  {
+    id: 6,
+    title: 'Vans Clone',
+    description: 'Clon funcional de e-commerce inspirado en Vans, desarrollado con React y componentes modernos de Shadcn/UI. Implementa un catálogo de productos interactivo, carrito de compras con gestión de estado, filtros dinámicos y diseño responsivo optimizado para todas las pantallas. Demuestra habilidades en desarrollo frontend, arquitectura de componentes reutilizables y experiencia de usuario fluida en aplicaciones de comercio electrónico.',
+    technologies: ['React', 'Shadcn/UI', 'TailwindCSS'],
+    demoUrl: 'https://vans-clone.netlify.app/',
+    codeUrl: 'https://github.com/scriptvg/e-commerce-vans-clone.git',
+    featured: true,
+    image: vansclone,
   }
 ]
 
