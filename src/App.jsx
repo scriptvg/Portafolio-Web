@@ -1,19 +1,22 @@
 import AppRouter from "./router/AppRouter"
 import { ThemeProvider } from "./components/ThemeProvider"
 import { Toaster } from "@/components/ui/sonner"
+import { HelmetProvider } from 'react-helmet-async';
 
 function App() {
 
 
   return (
-    <ThemeProvider
-      attribute="class"
-      defaultTheme="system"
-      enableSystem
-      disableTransitionOnChange>
-      <AppRouter />
-      <Toaster richColors />
-    </ThemeProvider>
+    <HelmetProvider>
+      <ThemeProvider
+        attribute="class"
+        defaultTheme="system"
+        enableSystem
+        disableTransitionOnChange>
+        <AppRouter />
+        <Toaster richColors />
+      </ThemeProvider>
+    </HelmetProvider>
 
   )
 }
