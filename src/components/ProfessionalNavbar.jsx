@@ -33,7 +33,7 @@ const ProfessionalNavbar = () => {
   const [open, setOpen] = useState(false)
 
   return (
-    <motion.nav 
+    <motion.nav
       className="fixed top-4 sm:top-6 inset-x-2 sm:inset-x-4 z-50 h-14 sm:h-16 bg-background/60 backdrop-blur-xl border border-border/50 shadow-2xl max-w-7xl mx-auto rounded-full"
       initial={{ y: -100, opacity: 0 }}
       animate={{ y: 0, opacity: 1 }}
@@ -48,8 +48,8 @@ const ProfessionalNavbar = () => {
           <NavigationMenuList>
             {navItems.map((item) => (
               <NavigationMenuItem key={item.href}>
-                <NavigationMenuLink 
-                  href={item.href} 
+                <NavigationMenuLink
+                  href={item.href}
                   className={navigationMenuTriggerStyle()}
                 >
                   {item.label}
@@ -74,7 +74,7 @@ const ProfessionalNavbar = () => {
             >
               <a href="https://www.linkedin.com/in/allan-josé-vélez-gonzález" target="_blank" rel="noopener noreferrer">
                 <svg className="h-4 w-4" fill="currentColor" viewBox="0 0 24 24">
-                  <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/>
+                  <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z" />
                 </svg>
                 <span className="sr-only">LinkedIn</span>
               </a>
@@ -82,9 +82,9 @@ const ProfessionalNavbar = () => {
           </motion.div>
 
           <Separator orientation="vertical" className="h-6 mx-1" />
-          
+
           <ThemeToggle />
-          
+
           <Button className="rounded-full ml-2" asChild>
             <a href="#contacto" className="flex items-center gap-2">
               <Mail className="h-4 w-4" />
@@ -96,7 +96,7 @@ const ProfessionalNavbar = () => {
         {/* Mobile Actions */}
         <div className="flex lg:hidden items-center gap-2">
           <ThemeToggle />
-          
+
           <Sheet open={open} onOpenChange={setOpen}>
             <SheetTrigger asChild>
               <Button variant="outline" size="icon" className="rounded-full">
@@ -126,7 +126,7 @@ const ProfessionalNavbar = () => {
                 <span className="sr-only">Abrir menú</span>
               </Button>
             </SheetTrigger>
-            
+
             <SheetContent side="right" className="w-[85vw] sm:w-[400px] p-0">
               <div className="flex flex-col h-full">
                 <SheetHeader className="px-6 pt-8 pb-6 space-y-3">
@@ -198,7 +198,7 @@ const ProfessionalNavbar = () => {
                         whileTap={{ scale: 0.95 }}
                       >
                         <svg className="h-4 w-4" fill="currentColor" viewBox="0 0 24 24">
-                          <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/>
+                          <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z" />
                         </svg>
                         LinkedIn
                       </motion.a>

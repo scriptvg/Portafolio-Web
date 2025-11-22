@@ -5,6 +5,7 @@ import {
   NavigationMenuList,
   navigationMenuTriggerStyle,
 } from "@/components/ui/navigation-menu"
+import { cn } from "@/lib/utils"
 
 const navItems = [
   { href: '#inicio', label: 'Inicio' },
@@ -18,8 +19,8 @@ export const NavMenu = (props) => (
     <NavigationMenuList
       className="space-x-0 data-[orientation=vertical]:flex-col data-[orientation=vertical]:items-start data-[orientation=vertical]:justify-start data-[orientation=vertical]:space-y-1">
       {navItems.map((item) => (
-        <NavigationMenuItem key={item.href}>
-          <NavigationMenuLink href={item.href} className={navigationMenuTriggerStyle()}>
+        <NavigationMenuItem  key={item.href}>
+          <NavigationMenuLink href={item.href} className={cn(navigationMenuTriggerStyle(), 'bg-transparent')}>
             {item.label}
           </NavigationMenuLink>
         </NavigationMenuItem>

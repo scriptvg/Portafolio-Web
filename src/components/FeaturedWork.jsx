@@ -103,10 +103,9 @@ const FeaturedWork = () => {
               transition={{ duration: 0.5, delay: index * 0.1 }}
               className={project.featured ? 'lg:row-span-1' : ''}
             >
-              <Card 
-                className={`p-0 h-full flex flex-col overflow-hidden hover:shadow-xl transition-all group ${
-                  project.featured ? 'border-primary/50' : ''
-                }`}
+              <Card
+                className={`p-0 h-full flex flex-col overflow-hidden hover:shadow-xl transition-all group ${project.featured ? 'border-primary/50' : ''
+                  }`}
               >
                 {/* Image Placeholder or Project Image */}
                 <motion.div
@@ -115,21 +114,24 @@ const FeaturedWork = () => {
                   transition={{ duration: 0.3 }}
                 >
                   {project.image ? (
-                    <img
-                      src={project.image}
-                      alt={project.title}
-                      className="w-full h-full object-cover"
-                    />
+                    <>
+                      <img
+                        src={project.image}
+                        alt={project.title}
+                        className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+                      />
+                      <div className="absolute inset-0 bg-black/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+                    </>
                   ) : (
                     <>
                       <div className="absolute inset-0 bg-linear-to-br from-primary/20 to-primary/5" />
                       <motion.div
-                        className="relative z-10 w-12 h-12 sm:w-14 sm:h-14 md:w-16 md:h-16 rounded-lg bg-background/80 backdrop-blur-sm flex items-center justify-center border border-border"
-                        whileHover={{ rotate: 360 }}
+                        className="relative z-10 w-12 h-12 sm:w-14 sm:h-14 md:w-16 md:h-16 rounded-lg bg-background/80 backdrop-blur-sm flex items-center justify-center border border-border shadow-lg"
+                        whileHover={{ rotate: 360, scale: 1.1 }}
                         transition={{ duration: 0.6 }}
                       >
                         <svg
-                          className="w-6 h-6 sm:w-7 sm:h-7 md:w-8 md:h-8 text-muted-foreground"
+                          className="w-6 h-6 sm:w-7 sm:h-7 md:w-8 md:h-8 text-primary"
                           fill="none"
                           stroke="currentColor"
                           viewBox="0 0 24 24"

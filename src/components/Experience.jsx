@@ -73,12 +73,17 @@ const Experience = () => {
                   <div className="flex gap-4 sm:gap-6">
                     {/* Timeline dot */}
                     <div className="relative shrink-0 hidden md:block">
+                      {index === 0 && (
+                        <span className="absolute inset-0 rounded-full" />
+                      )}
                       <motion.div
-                        className="w-[50px] h-[50px] md:w-[60px] md:h-[60px] rounded-full bg-background border-2 border-border flex items-center justify-center shadow-sm"
+                        className={`w-[50px] h-[50px] md:w-[60px] md:h-[60px] rounded-full bg-background border-2 ${index === 0 ? 'border-primary' : 'border-border'
+                          } flex items-center justify-center shadow-sm relative z-10`}
                         whileHover={{ scale: 1.1, rotate: 360 }}
                         transition={{ type: "spring", stiffness: 200 }}
                       >
-                        <div className="w-10 h-10 md:w-12 md:h-12 rounded-full bg-primary/10 flex items-center justify-center">
+                        <div className={`w-10 h-10 md:w-12 md:h-12 rounded-full ${index === 0 ? 'bg-primary/20' : 'bg-primary/10'
+                          } flex items-center justify-center`}>
                           <Icon className="h-5 w-5 md:h-6 md:w-6 text-primary" />
                         </div>
                       </motion.div>

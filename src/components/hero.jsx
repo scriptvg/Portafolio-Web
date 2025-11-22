@@ -31,11 +31,11 @@ export default function Hero() {
           Desarrollador Full Stack
         </p>
         <p className="mt-2 sm:mt-3 md:mt-4 text-[11px] sm:text-xs md:text-sm lg:text-base text-foreground/80 max-w-2xl mx-auto leading-relaxed px-2">
-          Especializado en React y Django, egresado de un bootcamp intensivo de 6 meses orientado al desarrollo web profesional. 
+          Especializado en React y Django, egresado de un bootcamp intensivo de 6 meses orientado al desarrollo web profesional.
           Apasionado por la creación de soluciones eficientes, escalables y centradas en el usuario.
         </p>
         <div className="mt-4 sm:mt-6 md:mt-8 flex items-center justify-center gap-2 flex-wrap px-2">
-          <Button size="sm" className="rounded-full text-[11px] sm:text-xs md:text-sm px-3 sm:px-4 md:px-5 h-8 sm:h-9 md:h-10" asChild>
+          <Button variant="shiny" size="sm" className="rounded-full text-[11px] sm:text-xs md:text-sm px-3 sm:px-4 md:px-5 h-8 sm:h-9 md:h-10" asChild>
             <a href="https://www.linkedin.com/in/allan-josé-vélez-gonzález" target="_blank" rel="noopener noreferrer" className="flex items-center gap-1">
               LinkedIn
               <ArrowUpRight className="h-2.5 w-2.5 sm:h-3 sm:w-3 md:h-4 md:w-4" />

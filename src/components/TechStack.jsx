@@ -1,18 +1,18 @@
 import { motion } from 'framer-motion'
 import { Badge } from '@/components/ui/badge'
-import { 
-  SiReact, 
-  SiVite, 
-  SiTailwindcss, 
-  SiHtml5, 
-  SiCss3, 
-  SiJavascript, 
-  SiTypescript, 
-  SiPython, 
-  SiDjango, 
-  SiNodedotjs, 
-  SiMysql, 
-  SiGit, 
+import {
+  SiReact,
+  SiVite,
+  SiTailwindcss,
+  SiHtml5,
+  SiCss3,
+  SiJavascript,
+  SiTypescript,
+  SiPython,
+  SiDjango,
+  SiNodedotjs,
+  SiMysql,
+  SiGit,
   SiLinux,
   SiOpenai
 } from 'react-icons/si'
@@ -94,8 +94,8 @@ const TechStack = () => {
                 whileHover={{ scale: 1.05, y: -5 }}
                 className="bg-background border border-border rounded-lg p-3 sm:p-4 flex flex-col items-center justify-center gap-1 sm:gap-2 hover:shadow-lg hover:border-primary/30 transition-all cursor-pointer group"
               >
-                <Icon 
-                  className="text-2xl sm:text-3xl text-muted-foreground group-hover:text-primary transition-colors" 
+                <Icon
+                  className="text-2xl sm:text-3xl text-muted-foreground group-hover:text-primary transition-colors"
                   style={{ color: tech.color }}
                 />
                 <span className="text-xs sm:text-sm font-medium text-center">{tech.name}</span>

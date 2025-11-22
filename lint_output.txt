@@ -1,0 +1,78 @@
+
+> frontend@0.0.0 lint
+> eslint .
+
+
+C:\Users\velez\OneDrive\Desktop\proyecto\frontend\src\components\AboutMe.jsx
+  1:10  error  'motion' is defined but never used. Allowed unused vars must match /^[A-Z_]/u  no-unused-vars
+
+C:\Users\velez\OneDrive\Desktop\proyecto\frontend\src\components\CTA.jsx
+  1:10  error  'motion' is defined but never used. Allowed unused vars must match /^[A-Z_]/u  no-unused-vars
+
+C:\Users\velez\OneDrive\Desktop\proyecto\frontend\src\components\Experience.jsx
+  1:10  error  'motion' is defined but never used. Allowed unused vars must match /^[A-Z_]/u  no-unused-vars
+
+C:\Users\velez\OneDrive\Desktop\proyecto\frontend\src\components\FeaturedWork.jsx
+  1:10  error  'motion' is defined but never used. Allowed unused vars must match /^[A-Z_]/u  no-unused-vars
+
+C:\Users\velez\OneDrive\Desktop\proyecto\frontend\src\components\ProfessionalNavbar.jsx
+  2:10  error  'motion' is defined but never used. Allowed unused vars must match /^[A-Z_]/u  no-unused-vars
+
+C:\Users\velez\OneDrive\Desktop\proyecto\frontend\src\components\Services.jsx
+   3:10  error  'motion' is defined but never used. Allowed unused vars must match /^[A-Z_]/u  no-unused-vars
+  13:7   error  Duplicate key 'icon'                                                           no-dupe-keys
+
+C:\Users\velez\OneDrive\Desktop\proyecto\frontend\src\components\Stats.jsx
+  1:10  error  'motion' is defined but never used. Allowed unused vars must match /^[A-Z_]/u  no-unused-vars
+
+C:\Users\velez\OneDrive\Desktop\proyecto\frontend\src\components\TechStack.jsx
+  1:10  error  'motion' is defined but never used. Allowed unused vars must match /^[A-Z_]/u  no-unused-vars
+
+C:\Users\velez\OneDrive\Desktop\proyecto\frontend\src\components\Testimonials.jsx
+  1:10  error  'motion' is defined but never used. Allowed unused vars must match /^[A-Z_]/u  no-unused-vars
+
+C:\Users\velez\OneDrive\Desktop\proyecto\frontend\src\components\ThemeToggle.jsx
+  3:10  error  'motion' is defined but never used. Allowed unused vars must match /^[A-Z_]/u  no-unused-vars
+
+C:\Users\velez\OneDrive\Desktop\proyecto\frontend\src\components\WorkProcess.jsx
+  1:10  error  'motion' is defined but never used. Allowed unused vars must match /^[A-Z_]/u  no-unused-vars
+
+C:\Users\velez\OneDrive\Desktop\proyecto\frontend\src\components\ui\animated-grid-pattern.jsx
+   2:10  error    'motion' is defined but never used. Allowed unused vars must match /^[A-Z_]/u                                                                                                                                                                                            no-unused-vars
+  56:6   warning  React Hook useEffect has a missing dependency: 'generateSquares'. Either include it or remove the dependency array                                                                                                                                                       react-hooks/exhaustive-deps
+  75:47  warning  The ref value 'containerRef.current' will likely have changed by the time this effect cleanup function runs. If this ref points to a node rendered by React, copy 'containerRef.current' to a variable inside the effect, and use that variable in the cleanup function  react-hooks/exhaustive-deps
+
+C:\Users\velez\OneDrive\Desktop\proyecto\frontend\src\components\ui\back-to-top.jsx
+  2:10  error  'motion' is defined but never used. Allowed unused vars must match /^[A-Z_]/u  no-unused-vars
+
+C:\Users\velez\OneDrive\Desktop\proyecto\frontend\src\components\ui\badge.jsx
+  44:17  error  Fast refresh only works when a file only exports components. Use a new file to share constants or functions between components  react-refresh/only-export-components
+
+C:\Users\velez\OneDrive\Desktop\proyecto\frontend\src\components\ui\button-group.jsx
+  77:3  error  Fast refresh only works when a file only exports components. Use a new file to share constants or functions between components  react-refresh/only-export-components
+
+C:\Users\velez\OneDrive\Desktop\proyecto\frontend\src\components\ui\button.jsx
+  57:18  error  Fast refresh only works when a file only exports components. Use a new file to share constants or functions between components  react-refresh/only-export-components
+
+C:\Users\velez\OneDrive\Desktop\proyecto\frontend\src\components\ui\form.jsx
+  136:3  error  Fast refresh only works when a file only exports components. Use a new file to share constants or functions between components  react-refresh/only-export-components
+
+C:\Users\velez\OneDrive\Desktop\proyecto\frontend\src\components\ui\navigation-menu.jsx
+  151:3  error  Fast refresh only works when a file only exports components. Use a new file to share constants or functions between components  react-refresh/only-export-components
+
+C:\Users\velez\OneDrive\Desktop\proyecto\frontend\src\components\ui\scroll-progress.jsx
+  1:10  error  'useEffect' is defined but never used. Allowed unused vars must match /^[A-Z_]/u  no-unused-vars
+  1:21  error  'useState' is defined but never used. Allowed unused vars must match /^[A-Z_]/u   no-unused-vars
+  2:10  error  'motion' is defined but never used. Allowed unused vars must match /^[A-Z_]/u     no-unused-vars
+
+C:\Users\velez\OneDrive\Desktop\proyecto\frontend\src\components\ui\sidebar.jsx
+  681:3  error  Fast refresh only works when a file only exports components. Use a new file to share constants or functions between components  react-refresh/only-export-components
+
+C:\Users\velez\OneDrive\Desktop\proyecto\frontend\src\components\ui\toggle.jsx
+  43:18  error  Fast refresh only works when a file only exports components. Use a new file to share constants or functions between components  react-refresh/only-export-components
+
+C:\Users\velez\OneDrive\Desktop\proyecto\frontend\src\layout\Navbar\MobileNav.jsx
+  2:10  error  'motion' is defined but never used. Allowed unused vars must match /^[A-Z_]/u  no-unused-vars
+
+Ô£û 27 problems (25 errors, 2 warnings)
+
