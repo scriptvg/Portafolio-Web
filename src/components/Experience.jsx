@@ -32,123 +32,49 @@ const experiences = [
 
 const Experience = () => {
   return (
-    <section id="experiencia" className="py-6 sm:py-10 md:py-14 px-4 sm:px-6 bg-muted/30">
-      <div className="w-full max-w-4xl mx-auto">
-        {/* Header */}
-        <motion.div
-          className="text-center mb-10 sm:mb-12 md:mb-16"
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.5 }}
-        >
-          <p className="text-[10px] sm:text-xs font-medium text-muted-foreground mb-2 sm:mb-3 tracking-wider uppercase">
-            Educación
-          </p>
-          <h2 className="text-xl sm:text-2xl md:text-3xl font-bold mb-2 sm:mb-3">
-            Títulos y Formación
-          </h2>
-          <p className="text-xs sm:text-sm md:text-base text-muted-foreground">
-            Mi trayectoria de formación profesional en desarrollo web
-          </p>
-        </motion.div>
+    <section id="experiencia" className="max-w-(--breakpoint-lg) mx-auto py-12 md:py-20 px-6">
+      <div className="relative ml-4">
+        {/* Timeline line */}
+        <div className="absolute left-0 inset-y-0 border-l-2" />
 
-        {/* Timeline */}
-        <div className="relative">
-          {/* Vertical line */}
-          <div className="absolute left-[29px] top-0 bottom-0 w-px bg-border hidden md:block" />
+        {experiences.map(
+          ({ company, description, period, technologies, title, icon: Icon }, index) => (
+            <div key={index} className="relative pl-10 pb-12 last:pb-0">
+              {/* Timeline Icon */}
+              <div className="absolute left-px -translate-x-1/2 h-9 w-9 flex items-center justify-center rounded-full bg-accent ring-8 ring-background">
+                <Icon className="h-5 w-5" />
+              </div>
 
-          <div className="space-y-8 sm:space-y-10 md:space-y-12">
-            {experiences.map((exp, index) => {
-              const Icon = exp.icon
-              return (
-                <motion.div
-                  key={exp.company}
-                  className="relative"
-                  initial={{ opacity: 0, x: -50 }}
-                  whileInView={{ opacity: 1, x: 0 }}
-                  viewport={{ once: true }}
-                  transition={{ duration: 0.5, delay: index * 0.2 }}
-                >
-                  <div className="flex gap-4 sm:gap-6">
-                    {/* Timeline dot */}
-                    <div className="relative shrink-0 hidden md:block">
-                      {index === 0 && (
-                        <span className="absolute inset-0 rounded-full" />
-                      )}
-                      <motion.div
-                        className={`w-[50px] h-[50px] md:w-[60px] md:h-[60px] rounded-full bg-background border-2 ${index === 0 ? 'border-primary' : 'border-border'
-                          } flex items-center justify-center shadow-sm relative z-10`}
-                        whileHover={{ scale: 1.1, rotate: 360 }}
-                        transition={{ type: "spring", stiffness: 200 }}
-                      >
-                        <div className={`w-10 h-10 md:w-12 md:h-12 rounded-full ${index === 0 ? 'bg-primary/20' : 'bg-primary/10'
-                          } flex items-center justify-center`}>
-                          <Icon className="h-5 w-5 md:h-6 md:w-6 text-primary" />
-                        </div>
-                      </motion.div>
-                    </div>
-
-                    {/* Content */}
-                    <motion.div
-                    
-                      className="flex-1"
-                      whileHover={{ x: 4 }}
-                      transition={{ type: "spring", stiffness: 300 }}
-                    >
-                      <Card className="overflow-hidden hover:shadow-lg transition-shadow gap-2">
-                        <CardHeader>
-                          {/* Company & Icon for mobile */}
-                          <div className="flex items-start gap-3 sm:gap-4">
-                            <div className="w-10 h-10 sm:w-12 sm:h-12 rounded-lg bg-primary/10 flex items-center justify-center shrink-0 md:hidden">
-                              <Icon className="h-5 w-5 sm:h-6 sm:w-6 text-primary" />
-                            </div>
-                            <div className="flex-1 min-w-0">
-                              <h3 className="text-base sm:text-lg md:text-xl font-bold">
-                                {exp.company}
-                              </h3>
-                              <p className="text-sm sm:text-base md:text-lg font-semibold text-foreground/80">
-                                {exp.position}
-                              </p>
-                            </div>
-                          </div>
-                          <CardAction>
-{/*                             <div className="flex items-center gap-2 text-xs sm:text-sm text-muted-foreground">
-                              <Calendar className="h-3 w-3 sm:h-4 sm:w-4 shrink-0" />
-                              <span className="truncate">{exp.period}</span>
-                            </div> */}
-                          </CardAction>
-                        </CardHeader>
-                        <CardContent className="space-y-2">
-                          <div className="flex items-center gap-2 text-xs sm:text-sm text-muted-foreground">
-                            <Calendar className="h-3 w-3 sm:h-4 sm:w-4 shrink-0" />
-                            <span className="truncate">{exp.period}</span>
-                          </div>
-                          {/* Description */}
-                          <p className="text-xs sm:text-sm md:text-base text-muted-foreground mb-3 sm:mb-4 leading-relaxed">
-                            {exp.description}
-                          </p>
-                        </CardContent>
-                        <CardFooter className="flex items-center gap-2">
-                          {/* Technologies */}
-                          {exp.technologies.map((tech) => (
-                            <Badge
-                              key={tech}
-                              variant="secondary"
-                              className="text-[10px] sm:text-xs"
-                            >
-                              {tech}
-                            </Badge>
-                          ))}
-                        </CardFooter>
-                      </Card>
-                    </motion.div>
+              {/* Content */}
+              <div className="pt-2 sm:pt-1 space-y-3">
+                <p className="text-base font-medium">{company}</p>
+                <div>
+                  <h3 className="text-xl font-semibold tracking-[-0.01em]">
+                    {title}
+                  </h3>
+                  <div className="flex items-center gap-2 mt-2 text-sm">
+                    <Calendar className="h-4 w-4" />
+                    <span>{period}</span>
                   </div>
-                </motion.div>
-              )
-            })}
-          </div>
-        </div>
+                </div>
+                <p className="text-sm sm:text-base text-muted-foreground text-pretty">
+                  {description}
+                </p>
+                <div className="flex flex-wrap gap-2">
+                  {technologies.map((tech) => (
+                    <Badge
+                      key={tech}
+                      variant="secondary"
+                      className="rounded-full"
+                    >
+                      {tech}
+                    </Badge>
+                  ))}
+                </div>
+              </div>
+            </div>
+          )
+        )}
       </div>
     </section>
   )

@@ -22,10 +22,6 @@ function Footer() {
               avatar={imgAvatar}
               email="velezalan34@gmail.com"
             >
-              <Button size="sm" variant="outline">
-                <Linkedin className='h-4 w-4 sm:h-5 sm:w-5' />
-                LinkedIn
-              </Button>
               <Button onClick={() => window.open('https://wa.me/50684813021', '_blank')} size="sm" variant="outline">
                 <MessageCircle className='h-4 w-4 sm:h-5 sm:w-5' />
                 +506 8481-3021
