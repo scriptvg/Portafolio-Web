@@ -4,92 +4,105 @@ import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar'
 import imgAvatar from '@/assets/my-notion-face-portrait-removebg-preview (2).png'
 import { Separator } from '@/components/ui/separator'
 import { Link } from 'react-router-dom'
-import { UserCard } from '@/components/custom/UserCard'
+
 import { MessageCircle } from 'lucide-react'
+import { Input } from '@/components/ui/input'
+import { TwitterIcon } from 'lucide-react'
+import { DribbbleIcon } from 'lucide-react'
+import { GithubIcon } from 'lucide-react'
+import { TwitchIcon } from 'lucide-react'
+
+const footerLinks = [
+  {
+    title: "Inicio",
+    href: "#",
+  },
+  {
+    title: "Sobre mí",
+    href: "#",
+  },
+  {
+    title: "Experiencia",
+    href: "#",
+  },
+  {
+    title: "Proyectos",
+    href: "#",
+  },
+  {
+    title: "Contacto",
+    href: "#",
+  },
+];
 
 function Footer() {
   return (
-    <footer className="py-6 sm:py-8 px-4 sm:px-6 border-t border-border bg-background/50 backdrop-blur-sm">
-      <div className="w-full max-w-6xl mx-auto">
-        {/* Main Content */}
-        <div className="flex flex-col gap-4 sm:gap-5">
-          <div className="flex flex-col md:flex-row gap-4 sm:gap-5">
-
-            <UserCard
-              name="Allan Vélez"
-              title="Desarrollador Full Stack"
-              description="Soy apasionado por la creación de soluciones eficientes, escalables y centradas en el usuario, con un enfoque en código limpio, arquitectura clara y desarrollo profesional continuo."
-              avatar={imgAvatar}
-              email="velezalan34@gmail.com"
-            >
-              <Button onClick={() => window.open('https://wa.me/50684813021', '_blank')} size="sm"  variant="outline">
-                <MessageCircle className='h-4 w-4 sm:h-5 sm:w-5' />
-                +506 8481-3021
-              </Button>
-            </UserCard>
-
-            <div className="flex flex-wrap items-center md:justify-end justify-center  w-full h-fit gap-4 sm:gap-6 text-[11px] sm:text-xs">
-              <Button asChild variant='link' size='sm' className='size-12'>
-                <a
-                  href="#inicio"
-                >
-                  Inicio
-                </a>
-              </Button>
-              <span className="text-muted-foreground/30">•</span>
-              <Button asChild variant='link' size='sm' className='size-12'>
-                <a
-                  href="#sobre-mi"
-                >
-                  Sobre mí
-                </a>
-              </Button>
-              <span className="text-muted-foreground/30">•</span>
-              <Button asChild variant='link' size='sm' className='size-12'>
-                <a
-                  href="#proyectos"
-                >
-                  Proyectos
-                </a>
-              </Button>
-              <span className="text-muted-foreground/30">•</span>
-              <Button asChild variant='link' size='sm' className='size-12'>
-                <a
-                  href="#contacto"
-                >
-                  Contacto
-                </a>
-              </Button>
-            </div>
+    <div className="flex flex-col">
+      <footer className="border-t">
+        <div className="max-w-(--breakpoint-lg) mx-auto">
+          <div className="py-12 flex flex-col sm:flex-row items-start justify-between gap-x-8 gap-y-10 px-6 xl:px-0">
             <div>
+              {/* Logo */}
+              <div className="flex items-center gap-2">
+                <Avatar className="h-12 w-12">
+                  <AvatarImage src={imgAvatar} />
+                  <AvatarFallback>AN</AvatarFallback>
+                </Avatar>
+                <h3 className="text-base font-bold">Allan Velez - Full Stack Developer</h3>
+              </div>
 
+              <ul className="mt-6 flex items-center gap-4 flex-wrap">
+                {footerLinks.map(({ title, href }) => (
+                  <li key={title}>
+                    <Link
+                      href={href}
+                      className="text-muted-foreground hover:text-foreground"
+                    >
+                      {title}
+                    </Link>
+                  </li>
+                ))}
+              </ul>
             </div>
 
-          </div>
-
-          <Separator className="my-4 sm:my-5" />
-
-          <div className='flex md:flex-row flex-col items-center justify-between'>
-            <p className="text-[10px] sm:text-xs text-center text-muted-foreground">
-              © {new Date().getFullYear()} Allan José Vélez González. Todos los derechos reservados.
-            </p>
-            <div className="flex gap-2">
-              <Button asChild variant="link">
-                <Link to="/" className="text-xs sm:text-sm">
-                  Terminos y Condiciones
-                </Link>
-              </Button>
-              <Button asChild variant="link">
-                <Link to="/" className="text-xs sm:text-sm">
-                  Politica de Privacidad
-                </Link>
-              </Button>
+            {/* Subscribe Newsletter */}
+            <div className="max-w-xs w-full">
+              <h6 className="font-medium">Stay up to date</h6>
+              <form className="mt-6 flex items-center gap-2">
+                <Input type="email" placeholder="Enter your email" />
+                <Button>Subscribe</Button>
+              </form>
             </div>
           </div>
+          <Separator />
+          <div className="py-8 flex flex-col-reverse sm:flex-row items-center justify-between gap-x-2 gap-y-5 px-6 xl:px-0">
+            {/* Copyright */}
+            <span className="text-muted-foreground">
+              &copy; {new Date().getFullYear()}{" "}
+              <Link href="/" target="_blank">
+                Allan Velez
+              </Link>
+              . All rights reserved.
+            </span>
 
+            <div className="flex items-center gap-5 text-muted-foreground">
+              <Link href="#" target="_blank">
+                <TwitterIcon className="h-5 w-5" />
+              </Link>
+              <Link href="#" target="_blank">
+                <DribbbleIcon className="h-5 w-5" />
+              </Link>
+              <Link href="#" target="_blank">
+                <TwitchIcon className="h-5 w-5" />
+              </Link>
+              <Link href="#" target="_blank">
+                <GithubIcon className="h-5 w-5" />
+              </Link>
+            </div>
+          </div>
         </div>
-      </div>
-    </footer>
+      </footer>
+    </div>
   )
 }
 
