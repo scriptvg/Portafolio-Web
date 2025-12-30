@@ -11,6 +11,7 @@ import { TwitterIcon } from 'lucide-react'
 import { DribbbleIcon } from 'lucide-react'
 import { GithubIcon } from 'lucide-react'
 import { TwitchIcon } from 'lucide-react'
+import { SiWhatsapp } from 'react-icons/si'
 
 const footerLinks = [
   {
@@ -67,7 +68,7 @@ function Footer() {
 
             {/* Subscribe Newsletter */}
             <div className="max-w-xs w-full">
-              <h6 className="font-medium">Stay up to date</h6>
+              <h6 className="font-medium">Ponte al día</h6>
               <form className="mt-6 flex items-center gap-2">
                 <Input type="email" placeholder="Enter your email" />
                 <Button>Subscribe</Button>
@@ -87,16 +88,16 @@ function Footer() {
 
             <div className="flex items-center gap-5 text-muted-foreground">
               <Link href="#" target="_blank">
-                <TwitterIcon className="h-5 w-5" />
+                <Linkedin className="h-5 w-5" />
               </Link>
               <Link href="#" target="_blank">
-                <DribbbleIcon className="h-5 w-5" />
-              </Link>
-              <Link href="#" target="_blank">
-                <TwitchIcon className="h-5 w-5" />
+                <Mail className="h-5 w-5" />
               </Link>
               <Link href="#" target="_blank">
                 <GithubIcon className="h-5 w-5" />
+              </Link>
+              <Link href="#" target="_blank">
+                <SiWhatsapp className="h-5 w-5" />
               </Link>
             </div>
           </div>
