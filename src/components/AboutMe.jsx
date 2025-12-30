@@ -2,19 +2,35 @@ import { motion } from 'framer-motion'
 import { Button } from '@/components/ui/button'
 import { Download } from 'lucide-react'
 import avatarImg from '@/assets/my-notion-face-portrait-removebg-preview (2).png'
+import { Badge } from './ui/badge'
+import { ButtonGroup } from './ui/button-group'
+import { Copy, Check } from 'lucide-react'
+import { useState } from 'react'
+import { toast } from 'sonner'
+import { Linkedin } from 'lucide-react'
+import { Section } from './base/section'
+import { CopyEmail } from '@/components/custom/CopyEmail'
+
+
+function LeftContent({ ...props }) {
+  return (
+    <motion.div
+      {...props}
+      initial={{ opacity: 0, x: -50 }}
+      whileInView={{ opacity: 1, x: 0 }}
+      viewport={{ once: true }}
+      transition={{ duration: 0.6 }}
+    />
+  )
+}
 
 const AboutMe = () => {
   return (
-    <section id="sobre-mi" className="py-6 sm:py-10 md:py-14 px-4 sm:px-6">
-      <div className="w-full max-w-6xl mx-auto">
+    <Section id="sobre-mi" className="flex scroll-m-52">
+      <div className="w-full max-w-6xl p-4 my-auto mx-auto flex">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 md:gap-12 items-center">
           {/* Left Content */}
-          <motion.div
-            initial={{ opacity: 0, x: -50 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6 }}
-          >
+          <LeftContent>
             <motion.p
               className="text-[10px] sm:text-xs font-medium text-muted-foreground mb-2 sm:mb-3 tracking-wider uppercase"
               initial={{ opacity: 0, y: -10 }}
@@ -59,7 +75,7 @@ const AboutMe = () => {
             >
               <Button
                 size="sm"
-                className="rounded-full text-xs sm:text-sm h-8 sm:h-9"
+                className="text-xs sm:text-sm"
                 asChild
               >
                 <motion.a
@@ -70,31 +86,15 @@ const AboutMe = () => {
                   whileHover={{ scale: 1.05 }}
                   whileTap={{ scale: 0.95 }}
                 >
-                  <svg className="h-4 w-4 sm:h-5 sm:w-5" fill="currentColor" viewBox="0 0 24 24">
-                    <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z" />
-                  </svg>
+                  <Linkedin className='h-4 w-4 sm:h-5 sm:w-5' />
                   Ver LinkedIn
                 </motion.a>
               </Button>
 
-              <Button
-                size="sm"
-                variant="outline"
-                className="rounded-full text-xs sm:text-sm h-8 sm:h-9"
-                asChild
-              >
-                <motion.a
-                  href="mailto:velezalan34@gmail.com"
-                  className="flex items-center gap-2"
-                  whileHover={{ scale: 1.05 }}
-                  whileTap={{ scale: 0.95 }}
-                >
-                  <Download className="h-4 w-4 sm:h-5 sm:w-5" />
-                  Contactar
-                </motion.a>
-              </Button>
+              <CopyEmail email="velezalan34@gmail.com" />
+
             </motion.div>
-          </motion.div>
+          </LeftContent>
 
           {/* Right Image */}
           <motion.div
@@ -121,7 +121,7 @@ const AboutMe = () => {
 
               {/* Image container */}
               <motion.div
-                className="relative bg-muted/50 backdrop-blur-sm rounded-3xl p-4 sm:p-6 md:p-8 border border-border"
+                className="relative bg-muted/50  backdrop-blur-sm rounded-3xl  p-4 sm:p-6 md:p-8 border border-border"
                 whileHover={{ scale: 1.02 }}
                 transition={{ type: "spring", stiffness: 300 }}
               >
@@ -132,48 +132,12 @@ const AboutMe = () => {
                     className="w-full h-full object-cover"
                   />
                 </div>
-
-                {/* Floating badge */}
-                <motion.div
-                  className="absolute -top-2 -right-2 sm:-top-4 sm:-right-4 bg-background border border-border rounded-full p-2 sm:p-3 md:p-4 shadow-lg"
-                  initial={{ scale: 0, rotate: -180 }}
-                  whileInView={{ scale: 1, rotate: 0 }}
-                  viewport={{ once: true }}
-                  transition={{
-                    type: "spring",
-                    stiffness: 200,
-                    delay: 0.6
-                  }}
-                >
-                  <div className="text-center">
-                    <p className="text-lg sm:text-xl md:text-2xl font-bold text-primary">6</p>
-                    <p className="text-[10px] sm:text-xs text-muted-foreground">Meses</p>
-                  </div>
-                </motion.div>
-
-                {/* Floating badge 2 */}
-                <motion.div
-                  className="absolute -bottom-2 -left-2 sm:-bottom-4 sm:-left-4 bg-background border border-border rounded-full p-2 sm:p-3 md:p-4 shadow-lg"
-                  initial={{ scale: 0, rotate: 180 }}
-                  whileInView={{ scale: 1, rotate: 0 }}
-                  viewport={{ once: true }}
-                  transition={{
-                    type: "spring",
-                    stiffness: 200,
-                    delay: 0.7
-                  }}
-                >
-                  <div className="text-center">
-                    <p className="text-lg sm:text-xl md:text-2xl font-bold text-primary">3+</p>
-                    <p className="text-[10px] sm:text-xs text-muted-foreground">Proyectos</p>
-                  </div>
-                </motion.div>
               </motion.div>
             </div>
           </motion.div>
         </div>
       </div>
-    </section>
+    </Section>
   )
 }
 

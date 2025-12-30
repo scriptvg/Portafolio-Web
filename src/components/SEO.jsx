@@ -4,7 +4,7 @@ const SEO = ({ title, description, keywords, image, url }) => {
   const siteTitle = 'Allan Vélez - Desarrollador Full Stack';
   const defaultDescription = 'Desarrollador Full Stack especializado en React y Django. Creando soluciones eficientes y escalables.';
   const defaultImage = '/src/assets/my-notion-face-portrait-removebg-preview (2).png';
-  const siteUrl = 'https://allanvelez.dev'; // Replace with actual URL if known
+  const siteUrl = 'https://cv-kromm.netlify.app/'; // Replace with actual URL if known
 
   return (
     <Helmet>

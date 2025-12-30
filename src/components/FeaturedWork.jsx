@@ -1,10 +1,67 @@
 import { motion } from 'framer-motion'
-import { ExternalLink, Github } from 'lucide-react'
+import { ExternalLink, Github, Database, PenTool, Smartphone, CircleDollarSign } from 'lucide-react'
 import { Button } from '@/components/ui/button'
 import { Badge } from '@/components/ui/badge'
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from '@/components/ui/card'
 import pokeproyectoImage from '@/assets/pokeapp.png'
 import vansclone from '@/assets/image.png'
+import {
+  SiReact,
+  SiVite,
+  SiTailwindcss,
+  SiHtml5,
+  SiCss3,
+  SiJavascript,
+  SiTypescript,
+  SiPython,
+  SiDjango,
+  SiNodedotjs,
+  SiMysql,
+  SiGit,
+  SiLinux,
+  SiJest,
+  SiCypress,
+  SiJquery,
+  SiReactrouter,
+  SiOpenai,
+  SiReplit,
+  SiMoodle,
+  SiPhp,
+  SiPaypal,
+  SiJsonwebtokens,
+  SiRadixui,
+} from 'react-icons/si'
+
+const techIcon = {
+  React: SiReact,
+  Vite: SiVite,
+  TailwindCSS: SiTailwindcss,
+  HTML5: SiHtml5,
+  CSS3: SiCss3,
+  JavaScript: SiJavascript,
+  TypeScript: SiTypescript,
+  Python: SiPython,
+  Django: SiDjango,
+  Nodejs: SiNodedotjs,
+  MySQL: SiMysql,
+  Git: SiGit,
+  Linux: SiLinux,
+  Jest: SiJest,
+  Cypress: SiCypress,
+  jQuery: SiJquery,
+  'React Router': SiReactrouter,
+  OpenAI: SiOpenai,
+  Replit: SiReplit,
+  Moodle: SiMoodle,
+  PHP: SiPhp,
+  Paypal: SiPaypal,
+  JWT: SiJsonwebtokens,
+  'Shadcn/UI': SiRadixui,
+  PokeAPI: Database,
+  'UX/UI': PenTool,
+  'Mobile Design': Smartphone,
+  Fintech: CircleDollarSign,
+}
 
 const projects = [
   {
@@ -19,7 +76,7 @@ const projects = [
   },
   {
     id: 2,
-    title: 'Academia virtual UPC - OfitechLat',
+    title: 'Academia virtual UPC plataforma LMS Moodle (OfitechLat)',
     description: 'Proyecto desarrollado para Academia UPC en colaboración con OfitechLat, integrando herramientas de código abierto y personalización avanzada de una plataforma de educación virtual basada en Moodle para lograr una experiencia educativa profesional.',
     technologies: ['Moodle', 'PHP', 'MySQL'],
     demoUrl: '#',
@@ -70,6 +127,12 @@ const projects = [
 ]
 
 const FeaturedWork = () => {
+
+  const AssignIconToTech = ({ tech }) => {
+    const Icon = techIcon[tech];
+    return Icon ? <Icon className="w-4 h-4 mr-1" /> : null;
+  }
+
   return (
     <section id="proyectos" className="py-6 sm:py-10 md:py-14 px-4 sm:px-6">
       <div className="w-full max-w-6xl mx-auto">
@@ -148,7 +211,7 @@ const FeaturedWork = () => {
                   )}
                 </motion.div>
 
-                <CardHeader className="p-4 sm:p-5 md:p-6">
+                <CardHeader className="">
                   <CardTitle className="text-lg sm:text-xl md:text-2xl group-hover:text-primary transition-colors">
                     {project.title}
                   </CardTitle>
@@ -157,10 +220,11 @@ const FeaturedWork = () => {
                   </CardDescription>
                 </CardHeader>
 
-                <CardContent className="flex-1 p-4 sm:p-5 md:p-6 pt-0">
+                <CardContent className=" flex-1">
                   <div className="flex flex-wrap gap-1.5 sm:gap-2">
                     {project.technologies.map((tech) => (
                       <Badge key={tech} variant="secondary" className="text-[10px] sm:text-xs">
+                        <AssignIconToTech tech={tech} />
                         {tech}
                       </Badge>
                     ))}

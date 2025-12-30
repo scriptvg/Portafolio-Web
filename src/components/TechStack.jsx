@@ -1,5 +1,4 @@
-import { motion } from 'framer-motion'
-import { Badge } from '@/components/ui/badge'
+import { motion, useReducedMotion } from 'framer-motion'
 import {
   SiReact,
   SiVite,
@@ -14,26 +13,88 @@ import {
   SiMysql,
   SiGit,
   SiLinux,
-  SiOpenai
+  SiJest,
+  SiCypress,
+  SiJquery,
+  SiReactrouter,
 } from 'react-icons/si'
-import { BiData } from 'react-icons/bi'
+import { Badge } from '@/components/ui/badge'
+import { Section } from './base/section'
+import { Separator } from './ui/separator'
+import { Item, ItemContent, ItemDescription, ItemTitle, ItemActions, ItemMedia } from './ui/item'
+import { Button } from './ui/button'
 
-const technologies = [
-  { name: 'React', Icon: SiReact, color: '#61DAFB' },
-  { name: 'Vite', Icon: SiVite, color: '#646CFF' },
-  { name: 'TailwindCSS', Icon: SiTailwindcss, color: '#06B6D4' },
-  { name: 'HTML5', Icon: SiHtml5, color: '#E34F26' },
-  { name: 'CSS3', Icon: SiCss3, color: '#1572B6' },
-  { name: 'JavaScript', Icon: SiJavascript, color: '#F7DF1E' },
-  { name: 'TypeScript', Icon: SiTypescript, color: '#3178C6' },
-  { name: 'Python', Icon: SiPython, color: '#3776AB' },
-  { name: 'Django', Icon: SiDjango, color: '#092E20' },
-  { name: 'Node.js', Icon: SiNodedotjs, color: '#339933' },
-  { name: 'MySQL', Icon: SiMysql, color: '#4479A1' },
-  { name: 'SQL', Icon: BiData, color: '#CC2927' },
-  { name: 'Git', Icon: SiGit, color: '#F05032' },
-  { name: 'Linux', Icon: SiLinux, color: '#FCC624' },
-  { name: 'OpenAI', Icon: SiOpenai, color: '#412991' },
+/* -------------------------------------------------------------------------- */
+/*                                    Types                                   */
+/* -------------------------------------------------------------------------- */
+
+/* type Technology = {
+  name: string
+  Icon: IconType
+  color: string
+}
+
+type TechCategory = {
+  title: string
+  technologies: Technology[]
+} */
+
+/* -------------------------------------------------------------------------- */
+/*                                  Animations                                */
+/* -------------------------------------------------------------------------- */
+
+const fadeUp = {
+  hidden: { opacity: 0, y: 20 },
+  visible: { opacity: 1, y: 0 },
+}
+
+const scaleIn = {
+  hidden: { opacity: 0, scale: 0.85 },
+  visible: { opacity: 1, scale: 1 },
+}
+
+/* -------------------------------------------------------------------------- */
+/*                                   Data                                     */
+/* -------------------------------------------------------------------------- */
+
+const techStack = [
+  {
+    title: 'Frontend',
+    technologies: [
+      { name: 'React', description: 'Librería de JavaScript', Icon: SiReact, color: '#61DAFB' },
+      { name: 'Vite', description: 'Entorno de desarrollo', Icon: SiVite, color: '#646CFF' },
+      { name: 'TailwindCSS', description: 'Framework de estilos', Icon: SiTailwindcss, color: '#06B6D4' },
+      { name: 'HTML5', description: 'Lenguaje de marcado', Icon: SiHtml5, color: '#E34F26' },
+      { name: 'CSS3', description: 'Lenguaje de estilos', Icon: SiCss3, color: '#1572B6' },
+      { name: 'JavaScript', description: 'Lenguaje de programación', Icon: SiJavascript, color: '#F7DF1E' },
+      { name: 'TypeScript', description: 'Lenguaje de programación', Icon: SiTypescript, color: '#3178C6' },
+      { name: 'TanStackQuery', description: 'Librería de JavaScript para manejar datos', Icon: SiJquery, color: '#0769AD' },
+      { name: 'React Router Dom', description: 'Librería de JavaScript para manejar rutas', Icon: SiReactrouter, color: '#0769AD' },
+    ],
+  },
+  {
+    title: 'Backend',
+    technologies: [
+      { name: 'Python', description: 'Lenguaje de programación', Icon: SiPython, color: '#3776AB' },
+      { name: 'Django', description: 'Framework de Python para desarrollo de APIs', Icon: SiDjango, color: '#092E20' },
+      { name: 'Node.js', description: 'Entorno de desarrollo', Icon: SiNodedotjs, color: '#339933' },
+      { name: 'MySQL', description: 'Base de datos', Icon: SiMysql, color: '#4479A1' },
+    ],
+  },
+  {
+    title: 'DevOps',
+    technologies: [
+      { name: 'Git', description: 'Control de versiones', Icon: SiGit, color: '#F05032' },
+      { name: 'Linux', description: 'Sistema operativo', Icon: SiLinux, color: '#FCC624' },
+    ],
+  },
+  {
+    title: 'Testing',
+    technologies: [
+      { name: 'Jest', description: 'Librería de JavaScript para pruebas unitarias', Icon: SiJest, color: '#C21325' },
+      { name: 'Cypress', description: 'Librería de JavaScript para pruebas de integración', Icon: SiCypress, color: '#69D3A7' },
+    ],
+  },
 ]
 
 const skills = [
@@ -51,90 +112,110 @@ const skills = [
   'Actitud proactiva y comprometida',
 ]
 
-const TechStack = () => {
+/* -------------------------------------------------------------------------- */
+/*                               Subcomponents                                 */
+/* -------------------------------------------------------------------------- */
+
+const TechCard = ({
+  tech,
+  index,
+}) => {
+  const Icon = tech.Icon
+
   return (
-    <section className="py-6 sm:py-10 md:py-14 px-4 sm:px-6 bg-muted/30">
-      <div className="w-full max-w-6xl mx-auto">
-        {/* Header */}
-        <motion.div
-          className="text-center mb-10 sm:mb-12 md:mb-16"
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
+    <Item variant="outline" key={tech.name} className='w-full'>
+      <ItemMedia className="p-4 border bg-secondary/10" style={{ '--color': tech.color }}>
+        <tech.Icon className="text-2xl" style={{ color: 'var(--color)' }} />
+      </ItemMedia>
+      <ItemContent>
+        <ItemTitle>{tech.name}</ItemTitle>
+        <ItemDescription>
+          {tech.description}
+        </ItemDescription>
+      </ItemContent>
+    </Item>
+  )
+}
+
+/* -------------------------------------------------------------------------- */
+/*                                 Component                                  */
+/* -------------------------------------------------------------------------- */
+
+const TechStack = () => {
+
+
+  return (
+    <Section className="min-h-screen">
+      <div className="w-full flex flex-col items-start max-w-6xl min-h-screen mx-auto gap-8">
+        <header className='w-full flex items-center justify-center'>
+          <motion.div
+            className="text-center mb-10 sm:mb-12 md:mb-16"
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.5 }}
+          >
+            <p className="text-[10px] sm:text-xs font-medium text-muted-foreground mb-2 sm:mb-3 tracking-wider uppercase">
+              Stack
+            </p>
+            <h2 className="text-xl sm:text-2xl md:text-3xl font-bold mb-2 sm:mb-3">
+              Tecnologías y Herramientas
+            </h2>
+            <p className="text-xs sm:text-sm md:text-base text-muted-foreground">
+              Algunas de las tecnologías y herramientas que uso en mis proyectos
+            </p>
+          </motion.div>
+        </header>
+        <div className="flex-1 w-full min-h-screen">
+          {techStack.map(section => (
+            <div key={section.title} className="p-4">
+              <h3 className="text-2xl font-semibold mb-6">
+                {section.title}
+              </h3>
+              <div
+                role="list"
+                className="flex flex-wrap justify-center gap-3"
+              >
+                {section.technologies.map((tech) => (
+                  <TechCard
+                    key={tech.name}
+                    tech={tech}
+                    index={0}
+                  />
+                ))}
+              </div>
+            </div>
+          ))}
+        </div>
+
+        {/* Skills */}
+        {/*         <motion.div
+          variants={fadeUp}
+          initial="hidden"
+          whileInView="visible"
           viewport={{ once: true }}
           transition={{ duration: 0.5 }}
+          className="mt-20"
         >
-          <p className="text-[10px] sm:text-xs font-medium text-muted-foreground mb-2 sm:mb-3 tracking-wider uppercase">
-            Tecnologías
-          </p>
-          <h2 className="text-xl sm:text-2xl md:text-3xl font-bold mb-2 sm:mb-3">
-            Stack de Tecnologías
-          </h2>
-          <p className="text-xs sm:text-sm md:text-base text-muted-foreground">
-            Herramientas y tecnologías con las que trabajo
-          </p>
-        </motion.div>
-
-        {/* Technologies Grid */}
-        <motion.div
-          className="grid grid-cols-3 sm:grid-cols-4 md:grid-cols-5 lg:grid-cols-5 gap-3 sm:gap-4 mb-10 sm:mb-12 md:mb-16"
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.5, delay: 0.2 }}
-        >
-          {technologies.map((tech, index) => {
-            const Icon = tech.Icon
-            return (
-              <motion.div
-                key={tech.name}
-                initial={{ opacity: 0, scale: 0.8 }}
-                whileInView={{ opacity: 1, scale: 1 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.3, delay: index * 0.05 }}
-                whileHover={{ scale: 1.05, y: -5 }}
-                className="bg-background border border-border rounded-lg p-3 sm:p-4 flex flex-col items-center justify-center gap-1 sm:gap-2 hover:shadow-lg hover:border-primary/30 transition-all cursor-pointer group"
-              >
-                <Icon
-                  className="text-2xl sm:text-3xl text-muted-foreground group-hover:text-primary transition-colors"
-                  style={{ color: tech.color }}
-                />
-                <span className="text-xs sm:text-sm font-medium text-center">{tech.name}</span>
-              </motion.div>
-            )
-          })}
-        </motion.div>
-
-        {/* Skills Section */}
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.5, delay: 0.4 }}
-        >
-          <h3 className="text-xl sm:text-2xl md:text-3xl font-bold mb-4 sm:mb-6 text-center">
+          <h3 className="text-2xl font-bold text-center mb-6">
             Skills Adicionales
           </h3>
-          <div className="flex flex-wrap gap-2 sm:gap-3 justify-center">
-            {skills.map((skill, index) => (
-              <motion.div
+
+          <div className="flex flex-wrap justify-center gap-3">
+            {skills.map(skill => (
+              <Badge
                 key={skill}
-                initial={{ opacity: 0, scale: 0.8 }}
-                whileInView={{ opacity: 1, scale: 1 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.3, delay: 0.5 + index * 0.03 }}
-                whileHover={{ scale: 1.05 }}
+                variant="secondary"
+                className="px-4 py-2 text-sm"
               >
-                <Badge variant="secondary" className="text-xs sm:text-sm py-1.5 sm:py-2 px-3 sm:px-4">
-                  {skill}
-                </Badge>
-              </motion.div>
+                {skill}
+              </Badge>
             ))}
           </div>
-        </motion.div>
+        </motion.div> */}
       </div>
-    </section>
+    </Section>
   )
 }
 
 export default TechStack
-

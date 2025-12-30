@@ -1,97 +1,96 @@
 import { Mail, Linkedin, MapPin } from 'lucide-react'
 import { Button } from '@/components/ui/button'
+import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar'
+import imgAvatar from '@/assets/my-notion-face-portrait-removebg-preview (2).png'
+import { Separator } from '@/components/ui/separator'
+import { Link } from 'react-router-dom'
+import { UserCard } from '@/components/custom/UserCard'
+import { MessageCircle } from 'lucide-react'
 
 function Footer() {
   return (
     <footer className="py-6 sm:py-8 px-4 sm:px-6 border-t border-border bg-background/50 backdrop-blur-sm">
       <div className="w-full max-w-6xl mx-auto">
         {/* Main Content */}
-        <div className="flex flex-col items-center gap-4 sm:gap-5">
-          {/* Logo/Name */}
-          <div className="text-center">
-            <h3 className="text-base sm:text-lg font-bold">Allan Vélez</h3>
-            <p className="text-[10px] sm:text-xs text-muted-foreground mt-0.5">
-              Desarrollador Full Stack
-            </p>
-          </div>
+        <div className="flex flex-col gap-4 sm:gap-5">
+          <div className="flex flex-col md:flex-row gap-4 sm:gap-5">
 
-          {/* Quick Links */}
-          <div className="flex flex-wrap items-center justify-center gap-3 sm:gap-4 text-[11px] sm:text-xs">
-            <a 
-              href="#inicio" 
-              className="text-muted-foreground hover:text-primary transition-colors"
+            <UserCard
+              name="Allan Vélez"
+              title="Desarrollador Full Stack"
+              description="Soy apasionado por la creación de soluciones eficientes, escalables y centradas en el usuario, con un enfoque en código limpio, arquitectura clara y desarrollo profesional continuo."
+              avatar={imgAvatar}
+              email="velezalan34@gmail.com"
             >
-              Inicio
-            </a>
-            <span className="text-muted-foreground/30">•</span>
-            <a 
-              href="#sobre-mi" 
-              className="text-muted-foreground hover:text-primary transition-colors"
-            >
-              Sobre mí
-            </a>
-            <span className="text-muted-foreground/30">•</span>
-            <a 
-              href="#proyectos" 
-              className="text-muted-foreground hover:text-primary transition-colors"
-            >
-              Proyectos
-            </a>
-            <span className="text-muted-foreground/30">•</span>
-            <a 
-              href="#contacto" 
-              className="text-muted-foreground hover:text-primary transition-colors"
-            >
-              Contacto
-            </a>
-          </div>
-
-          {/* Contact Buttons */}
-          <div className="flex flex-wrap items-center justify-center gap-2">
-            <Button
-              size="sm"
-              variant="outline"
-              className="rounded-full h-8 px-3 text-[11px] sm:text-xs"
-              asChild
-            >
-              <a 
-                href="mailto:velezalan34@gmail.com"
-                className="flex items-center gap-1.5"
-              >
-                <Mail className="h-3 w-3" />
-                Email
-              </a>
-            </Button>
-            <Button
-              size="sm"
-              variant="outline"
-              className="rounded-full h-8 px-3 text-[11px] sm:text-xs"
-              asChild
-            >
-              <a 
-                href="https://www.linkedin.com/in/allan-jos%C3%A9-v%C3%A9lez-gonz%C3%A1lez/"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="flex items-center gap-1.5"
-              >
-                <Linkedin className="h-3 w-3" />
+              <Button size="sm" variant="outline">
+                <Linkedin className='h-4 w-4 sm:h-5 sm:w-5' />
                 LinkedIn
-              </a>
-            </Button>
+              </Button>
+              <Button onClick={() => window.open('https://wa.me/50684813021', '_blank')} size="sm" variant="outline">
+                <MessageCircle className='h-4 w-4 sm:h-5 sm:w-5' />
+                +506 8481-3021
+              </Button>
+            </UserCard>
+
+            <div className="flex flex-wrap items-center justify-end w-full h-fit gap-3 sm:gap-4 text-[11px] sm:text-xs">
+              <Button asChild variant='link' size='sm'>
+                <a
+                  href="#inicio"
+                >
+                  Inicio
+                </a>
+              </Button>
+              <span className="text-muted-foreground/30">•</span>
+              <Button asChild variant='link' size='sm'>
+                <a
+                  href="#sobre-mi"
+                >
+                  Sobre mí
+                </a>
+              </Button>
+              <span className="text-muted-foreground/30">•</span>
+              <Button asChild variant='link' size='sm'>
+                <a
+                  href="#proyectos"
+                >
+                  Proyectos
+                </a>
+              </Button>
+              <span className="text-muted-foreground/30">•</span>
+              <Button asChild variant='link' size='sm'>
+                <a
+                  href="#contacto"
+                >
+                  Contacto
+                </a>
+              </Button>
+            </div>
+            <div>
+
+            </div>
+
           </div>
 
-          {/* Location */}
-          <div className="flex items-center gap-1 text-[10px] sm:text-xs text-muted-foreground">
-            <MapPin className="h-3 w-3" />
-            <span>Esparza, Costa Rica</span>
-          </div>
+          <Separator className="my-4 sm:my-5" />
 
-          {/* Copyright */}
-          <div className="pt-3 sm:pt-4 border-t border-border/50 w-full">
+          <div className='flex md:flex-row flex-col items-center justify-between'>
             <p className="text-[10px] sm:text-xs text-center text-muted-foreground">
               © {new Date().getFullYear()} Allan José Vélez González. Todos los derechos reservados.
             </p>
+            <div className="flex gap-2">
+              <Button asChild variant="link">
+                <Link to="/" className="text-xs sm:text-sm">
+                  Terminos y Condiciones
+                </Link>
+              </Button>
+              <Button asChild variant="link">
+                <Link to="/" className="text-xs sm:text-sm">
+                  Politica de Privacidad
+                </Link>
+              </Button>
+            </div>
           </div>
+
         </div>
       </div>
     </footer>
