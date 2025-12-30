@@ -28,7 +28,7 @@ function Footer() {
               </Button>
             </UserCard>
 
-            <div className="flex flex-wrap items-center justify-end w-full h-fit gap-3 sm:gap-4 text-[11px] sm:text-xs">
+            <div className="flex flex-wrap items-center md:justify-end justify-center  w-full h-fit gap-3 sm:gap-4 text-[11px] sm:text-xs">
               <Button asChild variant='link' size='sm'>
                 <a
                   href="#inicio"

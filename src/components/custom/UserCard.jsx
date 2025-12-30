@@ -9,7 +9,7 @@ export function UserCard({ name, title, description, avatar, email, children }) 
           <AvatarImage src={avatar} />
           <AvatarFallback>AN</AvatarFallback>
         </Avatar>
-        <div className="">
+        <div className="flex flex-col">
           <h3 className="text-base sm:text-lg font-bold">{name}</h3>
           <p className="text-[10px] sm:text-xs text-muted-foreground mt-0.5">
             {title}
@@ -17,10 +17,10 @@ export function UserCard({ name, title, description, avatar, email, children }) 
         </div>
 
       </div>
-      <div className="p-2">
+      <div className="p-2 max-w-[20rem]">
         <p className="text-xs sm:text-sm md:text-base text-muted-foreground leading-relaxed">{description}</p>
       </div>
-      <div className="items-center flex gap-2">
+      <div className=" flex-col sm:flex-row flex gap-2">
         {email && <CopyEmail email={email} />}
         {children}
       </div>
