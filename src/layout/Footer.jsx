@@ -22,14 +22,14 @@ function Footer() {
               avatar={imgAvatar}
               email="velezalan34@gmail.com"
             >
-              <Button onClick={() => window.open('https://wa.me/50684813021', '_blank')} size="sm" variant="outline">
+              <Button onClick={() => window.open('https://wa.me/50684813021', '_blank')} size="sm"  variant="outline">
                 <MessageCircle className='h-4 w-4 sm:h-5 sm:w-5' />
                 +506 8481-3021
               </Button>
             </UserCard>
 
-            <div className="flex flex-wrap items-center md:justify-end justify-center  w-full h-fit gap-3 sm:gap-4 text-[11px] sm:text-xs">
-              <Button asChild variant='link' size='sm'>
+            <div className="flex flex-wrap items-center md:justify-end justify-center  w-full h-fit gap-4 sm:gap-6 text-[11px] sm:text-xs">
+              <Button asChild variant='link' size='sm' className='size-12'>
                 <a
                   href="#inicio"
                 >
@@ -37,7 +37,7 @@ function Footer() {
                 </a>
               </Button>
               <span className="text-muted-foreground/30">•</span>
-              <Button asChild variant='link' size='sm'>
+              <Button asChild variant='link' size='sm' className='size-12'>
                 <a
                   href="#sobre-mi"
                 >
@@ -45,7 +45,7 @@ function Footer() {
                 </a>
               </Button>
               <span className="text-muted-foreground/30">•</span>
-              <Button asChild variant='link' size='sm'>
+              <Button asChild variant='link' size='sm' className='size-12'>
                 <a
                   href="#proyectos"
                 >
@@ -53,7 +53,7 @@ function Footer() {
                 </a>
               </Button>
               <span className="text-muted-foreground/30">•</span>
-              <Button asChild variant='link' size='sm'>
+              <Button asChild variant='link' size='sm' className='size-12'>
                 <a
                   href="#contacto"
                 >
