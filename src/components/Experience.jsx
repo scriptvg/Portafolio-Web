@@ -1,7 +1,7 @@
 import { motion } from 'framer-motion'
 import { Building2, Calendar } from 'lucide-react'
 import { Badge } from '@/components/ui/badge'
-import { Card, CardContent } from '@/components/ui/card'
+import { Card, CardAction, CardContent, CardFooter, CardHeader } from '@/components/ui/card'
 
 const experiences = [
   {
@@ -91,49 +91,56 @@ const Experience = () => {
 
                     {/* Content */}
                     <motion.div
+                    
                       className="flex-1"
                       whileHover={{ x: 4 }}
                       transition={{ type: "spring", stiffness: 300 }}
                     >
-                      <Card className="overflow-hidden hover:shadow-lg transition-shadow">
-                        <CardContent className="p-4 sm:p-5 md:p-6">
+                      <Card className="overflow-hidden hover:shadow-lg transition-shadow gap-2">
+                        <CardHeader>
                           {/* Company & Icon for mobile */}
-                          <div className="flex items-start gap-3 sm:gap-4 mb-3 sm:mb-4">
+                          <div className="flex items-start gap-3 sm:gap-4">
                             <div className="w-10 h-10 sm:w-12 sm:h-12 rounded-lg bg-primary/10 flex items-center justify-center shrink-0 md:hidden">
                               <Icon className="h-5 w-5 sm:h-6 sm:w-6 text-primary" />
                             </div>
                             <div className="flex-1 min-w-0">
-                              <h3 className="text-base sm:text-lg md:text-xl font-bold mb-1">
+                              <h3 className="text-base sm:text-lg md:text-xl font-bold">
                                 {exp.company}
                               </h3>
-                              <p className="text-sm sm:text-base md:text-lg font-semibold text-foreground/80 mb-2">
+                              <p className="text-sm sm:text-base md:text-lg font-semibold text-foreground/80">
                                 {exp.position}
                               </p>
-                              <div className="flex items-center gap-2 text-xs sm:text-sm text-muted-foreground">
-                                <Calendar className="h-3 w-3 sm:h-4 sm:w-4 shrink-0" />
-                                <span className="truncate">{exp.period}</span>
-                              </div>
                             </div>
                           </div>
-
+                          <CardAction>
+{/*                             <div className="flex items-center gap-2 text-xs sm:text-sm text-muted-foreground">
+                              <Calendar className="h-3 w-3 sm:h-4 sm:w-4 shrink-0" />
+                              <span className="truncate">{exp.period}</span>
+                            </div> */}
+                          </CardAction>
+                        </CardHeader>
+                        <CardContent className="space-y-2">
+                          <div className="flex items-center gap-2 text-xs sm:text-sm text-muted-foreground">
+                            <Calendar className="h-3 w-3 sm:h-4 sm:w-4 shrink-0" />
+                            <span className="truncate">{exp.period}</span>
+                          </div>
                           {/* Description */}
                           <p className="text-xs sm:text-sm md:text-base text-muted-foreground mb-3 sm:mb-4 leading-relaxed">
                             {exp.description}
                           </p>
-
-                          {/* Technologies */}
-                          <div className="flex flex-wrap gap-1.5 sm:gap-2">
-                            {exp.technologies.map((tech) => (
-                              <Badge
-                                key={tech}
-                                variant="secondary"
-                                className="text-[10px] sm:text-xs"
-                              >
-                                {tech}
-                              </Badge>
-                            ))}
-                          </div>
                         </CardContent>
+                        <CardFooter className="flex items-center gap-2">
+                          {/* Technologies */}
+                          {exp.technologies.map((tech) => (
+                            <Badge
+                              key={tech}
+                              variant="secondary"
+                              className="text-[10px] sm:text-xs"
+                            >
+                              {tech}
+                            </Badge>
+                          ))}
+                        </CardFooter>
                       </Card>
                     </motion.div>
                   </div>

@@ -1,6 +1,6 @@
 import { motion } from 'framer-motion'
 import { Quote, Star } from 'lucide-react'
-import { Card, CardContent } from '@/components/ui/card'
+import { Card, CardContent, CardHeader } from '@/components/ui/card'
 
 const testimonials = [
   {
@@ -57,34 +57,10 @@ const Testimonials = () => {
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: index * 0.1 }}
             >
-              <Card className="h-full hover:shadow-xl hover:border-primary/30 transition-all group">
-                <CardContent className="p-4 sm:p-6">
-                  {/* Quote icon */}
-                  <motion.div
-                    className="w-10 h-10 sm:w-12 sm:h-12 rounded-full bg-primary/10 flex items-center justify-center mb-4 group-hover:bg-primary/20 transition-colors"
-                    whileHover={{ rotate: 180 }}
-                    transition={{ duration: 0.4 }}
-                  >
-                    <Quote className="h-5 w-5 sm:h-6 sm:w-6 text-primary" />
-                  </motion.div>
-
-                  {/* Rating */}
-                  <div className="flex gap-1 mb-3 sm:mb-4">
-                    {[...Array(testimonial.rating)].map((_, i) => (
-                      <Star
-                        key={i}
-                        className="h-4 w-4 fill-primary text-primary"
-                      />
-                    ))}
-                  </div>
-
-                  {/* Content */}
-                  <p className="text-sm sm:text-base text-muted-foreground mb-4 sm:mb-6 leading-relaxed italic">
-                    "{testimonial.content}"
-                  </p>
-
-                  {/* Author */}
-                  <div className="flex items-center gap-3">
+              <Card className="h-full hover:shadow-xl relative hover:border-primary/30 transition-all group">
+                <CardHeader>
+                  {/* Users */}
+                  <div className="flex items-center gap-3 mb-4">
                     <div className="w-10 h-10 sm:w-12 sm:h-12 rounded-full bg-primary/20 flex items-center justify-center shrink-0">
                       <span className="text-sm sm:text-base font-bold text-primary">
                         {testimonial.avatar}
@@ -99,6 +75,32 @@ const Testimonials = () => {
                       </p>
                     </div>
                   </div>
+                  {/* Rating */}
+                  <div className="flex gap-1">
+                    {[...Array(testimonial.rating)].map((_, i) => (
+                      <Star
+                        key={i}
+                        className="h-4 w-4 fill-primary text-primary"
+                      />
+                    ))}
+                  </div>
+                </CardHeader>
+                <CardContent className="">
+                  {/* Quote icon */}
+{/*                   <motion.div
+                    className="w-10 h-10 sm:w-12 sm:h-12 rounded-full bg-primary/10 flex items-center justify-center mb-4 group-hover:bg-primary/20 transition-colors absolute top-1/2 right-2"
+                    whileHover={{ rotate: 180 }}
+                    transition={{ duration: 0.4 }}
+                  >
+                    <Quote className="h-5 w-5 sm:h-6 sm:w-6 text-primary" />
+                  </motion.div> */}
+                  {/* Content */}
+                  <p className="text-sm sm:text-base text-muted-foreground leading-relaxed italic">
+                    "{testimonial.content}"
+                  </p>
+
+                  {/* Author */}
+
                 </CardContent>
               </Card>
             </motion.div>

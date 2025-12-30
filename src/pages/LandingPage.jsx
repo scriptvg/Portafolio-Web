@@ -1,10 +1,12 @@
 import { Suspense, lazy } from 'react'
 import { ScrollArea } from '@/components/ui/scroll-area'
-import Hero from '@/components/hero'
+import Hero, { ButtonSocial, Description, LocationBadge, Subtitle, Title } from '@/components/hero'
 import { Skeleton } from '@/components/ui/skeleton'
 import ScrollProgress from '@/components/ui/scroll-progress'
 import BackToTop from '@/components/ui/back-to-top'
 import SEO from '@/components/SEO'
+import { Button } from '@/components/ui/button'
+import { ArrowUpRight } from 'lucide-react'
 
 // Lazy load components
 const AboutMe = lazy(() => import('@/components/AboutMe'))
@@ -29,19 +31,41 @@ const SectionLoader = () => (
   </div>
 )
 
+const metaData = {
+  title: "Inicio",
+  description: "Portafolio de Allan Vélez, Desarrollador Full Stack especializado en React y Django. Explora mis proyectos y experiencia.",
+}
+
+
+
+
+
 function LandingPage() {
   return (
     <>
       <SEO
-        title="Inicio"
-        description="Portafolio de Allan Vélez, Desarrollador Full Stack especializado en React y Django. Explora mis proyectos y experiencia."
+        title={metaData.title}
+        description={metaData.description}
       />
       <ScrollProgress />
       <ScrollArea className="h-full w-full">
         <div className="scroll-smooth w-full overflow-x-hidden">
           {/* Hero Section - Eager loaded for LCP */}
           <section id="inicio">
-            <Hero />
+            <Hero>
+              <LocationBadge location='Costa Rica'/>
+              <Title>Allan José Vélez González</Title>
+              <Subtitle>Desarrollador Full Stack</Subtitle>
+              <Description>
+                Especializado en React y Django, egresado de un bootcamp intensivo de 6 meses orientado al desarrollo web profesional.
+                Apasionado por la creación de soluciones eficientes, escalables y centradas en el usuario.
+              </Description>
+              <div className="mt-4 sm:mt-6 md:mt-8 flex items-center justify-center gap-2 flex-wrap px-2">
+                <ButtonSocial name="LinkedIn" href="https://www.linkedin.com/in/allan-josé-vélez-gonzález"/>
+
+              </div>
+            </Hero>
+
           </section>
 
           <Suspense fallback={<SectionLoader />}>

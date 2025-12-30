@@ -52,7 +52,7 @@ const Services = () => {
                 transition={{ duration: 0.5, delay: index * 0.1 }}
               >
                 <Card className="h-full hover:shadow-xl hover:border-primary/30 transition-all duration-300 group">
-                  <CardHeader className="p-4 sm:p-5 md:p-6">
+                  <CardHeader className="">
                     <motion.div
                       className="w-10 h-10 sm:w-12 sm:h-12 rounded-lg bg-primary/10 flex items-center justify-center mb-3 sm:mb-4 group-hover:bg-primary/20 transition-colors"
                       whileHover={{ rotate: 360 }}
@@ -62,7 +62,7 @@ const Services = () => {
                     </motion.div>
                     <CardTitle className="text-base sm:text-lg md:text-xl group-hover:text-primary transition-colors">{feature.title}</CardTitle>
                   </CardHeader>
-                  <CardContent className="p-4 sm:p-5 md:p-6 pt-0">
+                  <CardContent className="">
                     <CardDescription className="text-xs sm:text-sm md:text-base">{feature.description}</CardDescription>
                   </CardContent>
                 </Card>
